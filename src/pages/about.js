@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-import Layout from "../components/organisms/layout"
+import Layout from "../components/organisms/Layout"
 import Seo from "../components/seo"
 
 const AboutUsPage = () => (

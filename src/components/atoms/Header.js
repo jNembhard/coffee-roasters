@@ -1,35 +1,24 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-
-const linkNames = ["home", "about us", "select a plan"]
+import Menu from "../atoms/Menu"
+import logo from "../../images/assets/shared/desktop/logo.svg"
+import styled from "styled-components"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+  <header>
+    <NavWrap>
+      <Link
+        to="/"
+        style={{
+          textDecoration: `none`,
+        }}
+      >
+        <Logo src={logo} alt="Logo" />
+        {/* <h1 style={{ margin: 0 }}>{siteTitle}</h1> */}
+      </Link>
+      <Menu />
+    </NavWrap>
   </header>
 )
 
@@ -42,3 +31,16 @@ Header.defaultProps = {
 }
 
 export default Header
+
+const Logo = styled.img`
+  width: 163px;
+  height: 18px;
+`
+
+const Nav = styled.nav``
+
+const NavWrap = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`

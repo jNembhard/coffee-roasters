@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/organisms/Layout"
 import Seo from "../components/seo"
+import PlanButton from "../components/atoms/PlanButton"
 
 const IndexPage = () => (
   <Layout>
@@ -15,7 +16,7 @@ const IndexPage = () => (
         curated artisan coffees from our best roasters delivered directly to
         your door, at your schedule.
       </p>
-      <button>Create your plan</button>
+      <PlanButton />
     </div>
 
     <div className="our-collection">
@@ -110,10 +111,10 @@ const IndexPage = () => (
           tasting experience.
         </p>
       </div>
-      <button>Create your plan</button>
+      <PlanButton />
     </div>
 
-    <StaticImage
+    {/* <StaticImage
       src="../images/gatsby-astronaut.png"
       width={300}
       quality={95}
@@ -124,7 +125,7 @@ const IndexPage = () => (
     <p>
       <Link to="/page-2/">Go to page 2</Link> <br />
       <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
+    </p> */}
   </Layout>
 )
 

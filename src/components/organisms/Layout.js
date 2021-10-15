@@ -8,13 +8,12 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
 
 import Header from "../atoms/Header"
-import "./layout.css"
+// import "../../styles/layout.css"
 import Footer from "../atoms/Footer"
-
-const GlobalStyle = createGlobalStyle``
+import { GlobalStyles } from "../../styles/GlobalStyles"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,7 +28,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `coffeeroasters`} />
+      <GlobalStyles />
+      <Header />
       <div
         style={{
           margin: `0 auto`,
@@ -39,6 +39,7 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <Footer siteTitle={data.site.siteMetadata?.title || `coffeeroasters`} />
+        <Test>Just a test</Test>
       </div>
     </>
   )
@@ -49,3 +50,8 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+const Test = styled.div`
+  color: var(--paleOrange);
+  font-weight: var(--frauncesBlack);
+`
