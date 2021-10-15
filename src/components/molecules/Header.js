@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Menu from "../atoms/Menu"
 import logo from "../../images/assets/shared/desktop/logo.svg"
 import styled from "styled-components"
+import BurgerNav from "../atoms/BurgerNav"
 
 const Header = ({ siteTitle }) => (
   <header>
@@ -18,6 +19,7 @@ const Header = ({ siteTitle }) => (
         {/* <h1 style={{ margin: 0 }}>{siteTitle}</h1> */}
       </Link>
       <Menu />
+      <BurgerNav />
     </NavWrap>
   </header>
 )
@@ -43,4 +45,5 @@ const NavWrap = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 32px 24px 40px;
 `

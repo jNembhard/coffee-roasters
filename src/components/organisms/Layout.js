@@ -8,12 +8,13 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 
-import Header from "../atoms/Header"
+import Header from "../molecules/Header"
 // import "../../styles/layout.css"
-import Footer from "../atoms/Footer"
+import Footer from "../molecules/Footer"
 import { GlobalStyles } from "../../styles/GlobalStyles"
+import { theme } from "../../styles/theme"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,19 +29,22 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalStyles />
-      <Header />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <Footer siteTitle={data.site.siteMetadata?.title || `coffeeroasters`} />
-        <Test>Just a test</Test>
-      </div>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Header />
+        <div
+          style={{
+            margin: `0 auto`,
+            maxWidth: 960,
+            padding: `0 1.0875rem 1.45rem`,
+          }}
+        >
+          <main>{children}</main>
+          <Footer
+            siteTitle={data.site.siteMetadata?.title || `coffeeroasters`}
+          />
+        </div>
+      </ThemeProvider>
     </>
   )
 }
@@ -50,8 +54,3 @@ Layout.propTypes = {
 }
 
 export default Layout
-
-const Test = styled.div`
-  color: var(--paleOrange);
-  font-weight: var(--frauncesBlack);
-`

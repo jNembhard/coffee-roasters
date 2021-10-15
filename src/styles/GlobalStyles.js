@@ -2,11 +2,11 @@ import { createGlobalStyle } from "styled-components"
 import BarlowRegular from "./fonts/Barlow/Barlow-Regular.ttf"
 import BarlowBold from "./fonts/Barlow/Barlow-Bold.ttf"
 import FrauncesBlack from "./fonts/Fraunces/Fraunces-Black.ttf"
-import { theme } from "./theme"
+import { variables } from "./variables"
 // import styled from "styled-components"
 
 export const GlobalStyles = createGlobalStyle`
-  ${theme}
+  ${variables}
 
   * {
     background-color: var(--lightCreamBG);
