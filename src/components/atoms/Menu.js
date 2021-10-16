@@ -42,8 +42,6 @@ const MenuWrapUL = styled.ul`
   }
 `
 
-const ClickWrap = styled.div``
-
 const Links = styled(Link)`
   display: none;
 
@@ -52,6 +50,7 @@ const Links = styled(Link)`
     color: var(--grey);
     text-decoration: none;
     cursor: pointer;
+
     &:hover {
       color: var(--darkGreyBlue);
     }

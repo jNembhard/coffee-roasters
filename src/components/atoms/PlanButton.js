@@ -1,10 +1,13 @@
-import * as React from "react"
+import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 const PlanButton = () => {
   return (
     <>
-      <Button>Create your plan</Button>
+      <Link to="/plan" style={{ textDecoration: `none` }}>
+        <Button>Create your plan</Button>
+      </Link>
     </>
   )
 }

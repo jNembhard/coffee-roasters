@@ -20,6 +20,27 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `desktop`,
+        path: `${__dirname}/src/images/assets/home/desktop`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `tablet`,
+        path: `${__dirname}/src/images/assets/home/tablet`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `mobile`,
+        path: `${__dirname}/src/images/assets/home/mobile`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `coffees`,
         path: `${__dirname}/src/data/home-page/coffees`,
       },

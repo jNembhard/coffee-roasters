@@ -1,54 +1,28 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import {
+  GatsbyImage,
+  getImage,
+  withArtDirection,
+  StaticImage,
+} from "gatsby-plugin-image"
 
 import Layout from "../components/organisms/Layout"
 import Seo from "../components/seo"
 import PlanButton from "../components/atoms/PlanButton"
+import HeroHome from "../components/molecules/HeroHome"
+import Coffees from "../components/organisms/Coffees"
+import styled from "styled-components"
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
     <div>
-      <h1>Great coffee made simple.</h1>
-      <p>
-        Start your mornings with the world’s best coffees. Try our expertly
-        curated artisan coffees from our best roasters delivered directly to
-        your door, at your schedule.
-      </p>
-      <PlanButton />
+      <HeroHome />
     </div>
 
-    <div className="our-collection">
-      Our collection
-      <div>
-        <h4>Gran Espresso</h4>
-        <p>
-          Light and flavorful blend with cocoa and black pepper for an intense
-          experience
-        </p>
-      </div>
-      <div>
-        <h4>Planalto</h4>
-        <p>
-          Brazilian dark roast with rich and velvety body, and hints of fruits
-          and nuts
-        </p>
-      </div>
-      <div>
-        <h4>Piccollo</h4>
-        <p>
-          Mild and smooth blend featuring notes of toasted almond and dried
-          cherry
-        </p>
-      </div>
-      <div>
-        <h4>Danche </h4>
-        <p>
-          Ethiopian hand-harvested blend densely packed with vibrant fruit notes
-        </p>
-      </div>
-    </div>
+    <Coffees />
+
     <div className="why-choose-us">
       <div>
         <h2>Why choose us?</h2>
