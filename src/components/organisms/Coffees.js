@@ -38,7 +38,7 @@ const Coffees = () => {
               <GatsbyImage
                 key={coffee.number}
                 image={getImage(
-                  coffee.frontmatter.coffeeImg.childImageSharp.gatsbyImageData
+                  coffee.frontmatter.coffeeImg?.childImageSharp?.gatsbyImageData
                 )}
                 alt={coffee.frontmatter.coffee}
               />
@@ -74,7 +74,7 @@ const CoffeeCollection = styled.div`
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-    margin-bottom: px;
+    margin-bottom: 26px;
   }
 `
 
@@ -89,7 +89,4 @@ const Title = styled.h4`
   line-height: 32px;
 `
 
-const Description = styled.p`
-  font-size: 15px;
-  line-height: 25px;
-`
+const Description = styled.p``

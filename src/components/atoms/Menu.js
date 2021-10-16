@@ -36,6 +36,7 @@ const MenuWrapUL = styled.ul`
     display: flex;
 
     li {
+      font-weight: var(--barlowBold);
       margin-right: 16px;
       margin-left: 16px;
     }

@@ -66,8 +66,6 @@ const CoffeeSideBar = styled.div`
     rgba(254, 252, 247, 1) 25%,
     rgba(254, 247, 247, 0) 80%
   );
-  /* transform: ${props =>
-    props.modalOpen ? "translateY(0)" : "translateY(100%)"}; */
   z-index: ${props => (props.modalOpen ? "2" : "-1")};
   transition: transform 0.3s ease-in-out;
 

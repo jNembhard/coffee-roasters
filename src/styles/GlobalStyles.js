@@ -3,7 +3,7 @@ import BarlowRegular from "./fonts/Barlow/Barlow-Regular.ttf"
 import BarlowBold from "./fonts/Barlow/Barlow-Bold.ttf"
 import FrauncesBlack from "./fonts/Fraunces/Fraunces-Black.ttf"
 import { variables } from "./variables"
-// import styled from "styled-components"
+import styled from "styled-components"
 
 export const GlobalStyles = createGlobalStyle`
   ${variables}
@@ -23,13 +23,13 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: var(--barlowRegular);
     color: var(--grey);
 
-    /* -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
     -moz-font-feature-settings: "kern", "liga", "clig", "calt";
     -ms-font-feature-settings: "kern", "liga", "clig", "calt";
     -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-    font-feature-settings: "kern", "liga", "clig", "calt"; */
+    font-feature-settings: "kern", "liga", "clig", "calt";
   }
 
   nav {
@@ -47,22 +47,30 @@ export const GlobalStyles = createGlobalStyle`
     text-rendering: optimizeLegibility;
   }
 
+  p {
+    font-family: "Barlow", sans-serif;
+    font-weight: var(--barlowRegular);
+    color: var(--darkGreyBlue);
+    font-size: 15px;
+    line-height: 25px;
+  }
+
   @font-face {
     font-family: "Barlow";
     src: url(${BarlowRegular}) format("truetype");
     font-style: normal;
-    font-weight: var(--barlowRegular);
+    font-weight: 400;
   }
   @font-face {
     font-family: "Barlow";
     src: url(${BarlowBold}) format("truetype");
     font-style: normal;
-    font-weight: var(--barlowBold);
+    font-weight: 700;
   }
   @font-face {
     font-family: "Fraunces";
     src: url(${FrauncesBlack}) format("truetype");
     font-style: normal;
-    font-weight: var(--frauncesBlack);
+    font-weight: 900;
   }
 `

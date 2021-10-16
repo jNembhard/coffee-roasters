@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    `gatsby-optional-chaining`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-image`,
     {
@@ -45,8 +46,23 @@ module.exports = {
         path: `${__dirname}/src/data/home-page/coffees`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `heroes`,
+        path: `${__dirname}/src/data/heroes`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          breakpoints: [767, 992, 1440],
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
