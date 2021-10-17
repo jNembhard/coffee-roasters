@@ -2,7 +2,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-const linkNames = ["home", "about us", "select a plan"]
+// const linkNames = ["home", "about us", "select a plan"]
 
 const Footer = ({ siteTitle }) => (
   <footer>

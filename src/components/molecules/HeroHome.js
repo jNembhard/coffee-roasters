@@ -2,16 +2,9 @@ import React from "react"
 import PlanButton from "../atoms/PlanButton"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
-import { useMediaQuery } from "../../hooks/useMediaQuery"
-import HomeDesktopBanner from "../../images/assets/home/desktop/image-hero-coffeepress.jpg"
-import HomeTabletBanner from "../../images/assets/home/tablet/image-hero-coffeepress.jpg"
-import mobilecoffeepress from "../../images/assets/home/mobile/image-hero-coffeepress.jpg"
 import styled from "styled-components"
 
 const HeroHome = () => {
-  const isScreenSize767 = useMediaQuery("(min-width: 767px)")
-  const isScreenSize992 = useMediaQuery("(min-width: 992px)")
-
   const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(
@@ -22,7 +15,7 @@ const HeroHome = () => {
           frontmatter {
             homeImg {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(quality: 100)
               }
             }
             number
@@ -33,9 +26,6 @@ const HeroHome = () => {
   `)
 
   const heroes = data.allMarkdownRemark.nodes
-  console.log(
-    getImage(heroes[2].frontmatter.homeImg.childImageSharp.gatsbyImageData)
-  )
 
   const images = withArtDirection(
     getImage(heroes[0].frontmatter.homeImg.childImageSharp.gatsbyImageData),
@@ -61,11 +51,11 @@ const HeroHome = () => {
         <ImageWrap>
           <GatsbyImage
             image={images}
+            loading="eager"
             quality={100}
             className="art-directed"
             formats={["auto", "webp", "avif"]}
             alt="coffeepress"
-            // style={{ marginBottom: `1.45rem` }}
           />
         </ImageWrap>
         <HeroContainer>
@@ -87,14 +77,18 @@ export default HeroHome
 const HeroWrap = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 120px;
 `
 
 const ImageWrap = styled.div`
+  position: relative;
   .art-directed {
     width: 327px;
     height: 500px;
+    border-radius: 8px;
   }
-  /* border: 1px solid red; */
 
   @media screen and (min-width: 767px) {
     .art-directed {
@@ -112,12 +106,21 @@ const ImageWrap = styled.div`
 
 const HeroContainer = styled.div`
   text-align: center;
-  align-items: center;
+  position: absolute;
+  background-color: transparent;
+  width: 327px;
 `
 
 const Title = styled.h1`
   font-size: 40px;
   line-height: 40px;
+  color: var(--lightCreamBG);
+  background-color: transparent;
+  margin: 100px 24px 24px;
 `
 
-const Description = styled.p``
+const Description = styled.p`
+  color: var(--lightCreamBG);
+  background-color: transparent;
+  margin: 0 24px 39px;
+`

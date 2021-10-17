@@ -1,5 +1,6 @@
 ---
-number: 01
+number: 8
+step: 01
 title: Pick your coffee
 description:
   Select from our evolving range of artisan coffees. Our beans are ethically

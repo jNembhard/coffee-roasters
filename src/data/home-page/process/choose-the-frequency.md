@@ -1,5 +1,6 @@
 ---
-number: 02
+number: 9
+step: 02
 title: Choose the frequency
 description:
   Customize your order frequency, quantity, even your roast style and grind type.

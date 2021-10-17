@@ -8,7 +8,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import styled, { ThemeProvider } from "styled-components"
+import { ThemeProvider } from "styled-components"
 
 import Header from "../molecules/Header"
 // import "../../styles/layout.css"

@@ -2,18 +2,20 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
+import sanitizeHtml from "sanitize-html"
 
 const Coffees = () => {
   const data = useStaticQuery(graphql`
     query CoffeesPage {
       coffees: allMarkdownRemark(
+        filter: { frontmatter: { number: { lt: 5, gte: 1 } } }
         sort: { fields: frontmatter___number, order: ASC }
       ) {
         nodes {
           frontmatter {
             coffeeImg {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(quality: 100)
               }
             }
             number
@@ -44,7 +46,9 @@ const Coffees = () => {
               />
             </CoffeeBags>
             <Title>{coffee.frontmatter.coffee}</Title>
-            <Description dangerouslySetInnerHTML={{ __html: coffee.html }} />
+            <Description
+              dangerouslySetInnerHTML={{ __html: sanitizeHtml(coffee.html) }}
+            />
           </CoffeesContainer>
         ))}
       </CoffeeCollection>
@@ -58,6 +62,7 @@ const CoffeesWrap = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin-bottom: 120px;
 `
 
 const CoffeesContainer = styled.div`
@@ -89,4 +94,10 @@ const Title = styled.h4`
   line-height: 32px;
 `
 
-const Description = styled.p``
+const Description = styled.p`
+  display: inline-flex;
+  align-items: center;
+  width: 282px;
+  height: 50px;
+  margin: 0 24px;
+`

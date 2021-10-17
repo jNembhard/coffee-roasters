@@ -49,20 +49,34 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `process`,
+        path: `${__dirname}/src/data/home-page/process`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `qualities`,
+        path: `${__dirname}/src/data/home-page/qualities`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `heroes`,
         path: `${__dirname}/src/data/heroes`,
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
-          breakpoints: [767, 992, 1440],
+          placeholder: "blurred",
         },
       },
     },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

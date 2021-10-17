@@ -1,12 +1,11 @@
 import * as React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Menu from "../atoms/Menu"
 import logo from "../../images/assets/shared/desktop/logo.svg"
 import styled from "styled-components"
 import BurgerNav from "../atoms/BurgerNav"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header>
     <NavWrap>
       <Link
@@ -16,21 +15,12 @@ const Header = ({ siteTitle }) => (
         }}
       >
         <Logo src={logo} alt="Logo" />
-        {/* <h1 style={{ margin: 0 }}>{siteTitle}</h1> */}
       </Link>
       <Menu />
       <BurgerNav />
     </NavWrap>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
 
@@ -39,7 +29,7 @@ const Logo = styled.img`
   height: 18px;
 `
 
-const Nav = styled.nav``
+// const Nav = styled.nav``
 
 const NavWrap = styled.header`
   display: flex;
