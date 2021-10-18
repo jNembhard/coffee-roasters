@@ -23,24 +23,24 @@ const Process = () => {
   `)
 
   const steps = data.steps.nodes
-  console.log(steps)
 
   return (
-    <>
-      <ProcessWrap>
+    <ProcessWrap>
+      <ProcessContainer>
         <h3>How it works</h3>
+        <Circles />
         {steps.map(step => (
-          <Container>
+          <StepContainer>
             <Step>{`0${step.frontmatter.step}`}</Step>
             <Title>{step.frontmatter.title}</Title>
             <Description>{step.frontmatter.description}</Description>
-          </Container>
+          </StepContainer>
         ))}
         <ButtonWrap>
           <PlanButton />
         </ButtonWrap>
-      </ProcessWrap>
-    </>
+      </ProcessContainer>
+    </ProcessWrap>
   )
 }
 
@@ -51,23 +51,26 @@ const ProcessWrap = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`
+
+const ProcessContainer = styled.div`
   width: 327px;
   height: 1116px;
+  text-align: center;
 
   h3 {
     font-size: 24px;
     line-height: 32px;
     color: var(--grey);
-    margin-top: 120px;
-    margin-bottom: -30px;
   }
 `
-
-const Container = styled.div`
+const Circles = styled.div`
+  display: none;
+`
+const StepContainer = styled.div`
   width: 327px;
   height: 253px;
-  margin: 56px 24px;
-  text-align: center;
+  margin: 56px 0;
 `
 const Step = styled.h1`
   font-size: 72px;
@@ -88,5 +91,5 @@ const Description = styled.p`
 const ButtonWrap = styled.div`
   width: 217px;
   height: 56px;
-  margin-top: 79px;
+  margin: 79px 55px 0;
 `
