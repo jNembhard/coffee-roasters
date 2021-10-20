@@ -13,6 +13,12 @@ const navLinks = [
   { name: "create your plan", url: "/plan" },
 ]
 
+const socials = [
+  { id: 1, name: "facebook", media: facebook },
+  { id: 2, name: "twitter", media: twitter },
+  { id: 3, name: "instagram", media: instagram },
+]
+
 const Footer = ({ siteTitle }) => (
   <FooterWrap>
     <Container>
@@ -30,9 +36,15 @@ const Footer = ({ siteTitle }) => (
         ))}
       </NavLinkUl>
       <SocialContainer>
-        <Socials src={facebook} width="24px" height="24px" alt="facebook" />
-        <Socials src={twitter} width="24px" height="24px" alt="twitter" />
-        <Socials src={instagram} width="24px" height="24px" alt="instagram" />
+        {socials.map(social => (
+          <Socials
+            key={social.id}
+            src={social.media}
+            width="24px"
+            height="24px"
+            alt={social.name}
+          />
+        ))}
       </SocialContainer>
     </Container>
   </FooterWrap>
