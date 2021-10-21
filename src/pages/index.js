@@ -5,18 +5,14 @@ import HeroHome from "../components/molecules/HeroHome"
 import Coffees from "../components/organisms/Coffees"
 import ChooseUs from "../components/organisms/ChooseUs"
 import Process from "../components/molecules/Process"
-// import styled from "styled-components"
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <div>
-      <HeroHome />
-    </div>
+    <HeroHome />
     <Coffees />
     <ChooseUs />
     <Process />
-    <div></div>
   </Layout>
 )
 

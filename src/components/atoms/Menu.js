@@ -26,6 +26,7 @@ export default Menu
 
 const MenuWrapUL = styled.ul`
   display: none;
+
   @media ${({ theme }) => theme.breakpoint.tablet} {
     display: unset;
     list-style-type: none;

@@ -63,6 +63,48 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `desktop`,
+        path: `${__dirname}/src/images/assets/about/desktop`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `tablet`,
+        path: `${__dirname}/src/images/assets/about/tablet`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `mobile`,
+        path: `${__dirname}/src/images/assets/about/mobile`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `commitment`,
+        path: `${__dirname}/src/data/about-page/commitment`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `uncompromising`,
+        path: `${__dirname}/src/data/about-page/uncompromising`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `regions`,
+        path: `${__dirname}/src/data/about-page/regions`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `heroes`,
         path: `${__dirname}/src/data/heroes`,
       },

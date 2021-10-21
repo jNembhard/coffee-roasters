@@ -66,7 +66,7 @@ const FooterWrap = styled.footer`
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 240px 24px 72px;
+  margin: 120px 24px 72px;
 `
 
 const Container = styled.div`
@@ -114,6 +114,10 @@ const LinkList = styled(Link)`
   color: var(--grey);
   font-weight: var(--barlowBold);
   text-transform: uppercase;
+
+  &:hover {
+    color: var(--lightCreamBG);
+  }
 `
 
 const SocialContainer = styled.div`
@@ -127,9 +131,9 @@ const SocialContainer = styled.div`
 `
 const Socials = styled.img`
   background-color: transparent;
-
+  cursor: pointer;
   &:hover {
-    background-color: var(--paleOrange);
-    cursor: pointer;
+    filter: invert(18%) sepia(47%) saturate(269%) hue-rotate(326deg)
+      brightness(101%) contrast(98%);
   }
 `

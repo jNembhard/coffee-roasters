@@ -1,14 +1,13 @@
 import React from "react"
-import PlanButton from "../atoms/PlanButton"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 import styled from "styled-components"
 
-const HeroHome = () => {
+const AboutHero = () => {
   const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(
-        filter: { frontmatter: { number: { lt: 8, gte: 5 } } }
+        filter: { frontmatter: { number: { lt: 14, gte: 11 } } }
         sort: { fields: frontmatter___number, order: ASC }
       ) {
         nodes {
@@ -25,21 +24,23 @@ const HeroHome = () => {
     }
   `)
 
-  const heroes = data.allMarkdownRemark.nodes
+  const heroesAbout = data.allMarkdownRemark.nodes
 
-  const images = withArtDirection(
-    getImage(heroes[2].frontmatter.homeImg.childImageSharp.gatsbyImageData),
+  const imagesAbout = withArtDirection(
+    getImage(
+      heroesAbout[2].frontmatter.homeImg.childImageSharp.gatsbyImageData
+    ),
     [
       {
         media: "(max-width: 768px)",
         image: getImage(
-          heroes[0].frontmatter.homeImg.childImageSharp.gatsbyImageData
+          heroesAbout[0].frontmatter.homeImg.childImageSharp.gatsbyImageData
         ),
       },
       {
         media: "(max-width: 992px)",
         image: getImage(
-          heroes[1].frontmatter.homeImg.childImageSharp.gatsbyImageData
+          heroesAbout[1].frontmatter.homeImg.childImageSharp.gatsbyImageData
         ),
       },
     ]
@@ -47,33 +48,33 @@ const HeroHome = () => {
 
   return (
     <>
-      <HeroWrap>
-        <ImageWrap>
+      <AboutHeroWrap>
+        <ImageContainer>
           <GatsbyImage
-            image={images}
+            image={imagesAbout}
             loading="eager"
             className="art-directed"
             formats={["auto", "webp", "avif"]}
-            alt="coffeepress"
+            alt="white cup"
           />
-        </ImageWrap>
-        <HeroContainer>
-          <Title>Great coffee made simple.</Title>
+        </ImageContainer>
+        <AboutHeroContainer>
+          <Title>About Us</Title>
           <Description>
-            Start your mornings with the world’s best coffees. Try our expertly
-            curated artisan coffees from our best roasters delivered directly to
-            your door, at your schedule.
+            Coffeeroasters began its journey of exotic discovery in 1999,
+            highlighting stories of coffee from around the world. We have since
+            been dedicated to bring the perfect cup - from bean to brew - in
+            every shipment.
           </Description>
-          <PlanButton />
-        </HeroContainer>
-      </HeroWrap>
+        </AboutHeroContainer>
+      </AboutHeroWrap>
     </>
   )
 }
 
-export default HeroHome
+export default AboutHero
 
-const HeroWrap = styled.div`
+const AboutHeroWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,40 +82,46 @@ const HeroWrap = styled.div`
   margin-bottom: 120px;
 `
 
-const ImageWrap = styled.div`
+const ImageContainer = styled.div`
   position: relative;
+  margin: 0 24px;
+
   .art-directed {
     width: 327px;
-    height: 500px;
+    height: 400px;
     border-radius: 8px;
+
     @media screen and (min-width: 767px) {
       width: 689px;
+      height: 400px;
 
       @media screen and (min-width: 992px) {
         width: 1280px;
-        height: 600px;
+        height: 450px;
       }
     }
   }
 `
 
-const HeroContainer = styled.div`
-  text-align: center;
+const AboutHeroContainer = styled.div`
   position: absolute;
   background-color: transparent;
-  width: 327px;
+  text-align: center;
+  margin: 111px 24px 87px;
 `
 
 const Title = styled.h1`
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 28px;
+  line-height: 28px;
   color: var(--lightCreamBG);
   background-color: transparent;
-  margin: 100px 24px 24px;
 `
 
 const Description = styled.p`
+  font-size: 15px;
+  line-height: 25px;
+  width: 279px;
+  height: 150px;
   color: var(--lightCreamBG);
   background-color: transparent;
-  margin: 0 24px 39px;
 `

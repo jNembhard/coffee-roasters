@@ -43,44 +43,37 @@ const BurgerNav = () => {
 
 export default BurgerNav
 
-const Hamburger = styled.img`
-  cursor: pointer;
+const BurgerNavWrap = styled.div`
+  position: releative;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    display: none;
+  }
 `
 
-const HamburgerWrap = styled.div`
-  /* position: absolute; */
+const HamburgerWrap = styled.div``
+
+const Hamburger = styled.img`
+  cursor: pointer;
 `
 
 const CoffeeSideBar = styled.div`
   position: fixed;
   top: 70px;
   bottom: 0;
-  right: 0;
+  right: 25px;
   left: 0;
   text-align: center;
   font-family: "Fraunces";
   font-size: 24px;
   line-height: 3.2;
-  background: linear-gradient(
-    180deg,
-    rgba(254, 252, 247, 1) 25%,
-    rgba(254, 247, 247, 0) 80%
-  );
+  background: linear-gradient(var(--lightCreamBG) 45%, transparent);
   z-index: ${props => (props.modalOpen ? "2" : "-1")};
   transition: transform 0.3s ease-in-out;
+  text-align: center;
 
   ul {
     list-style-type: none;
-    align-items: center;
-    justify-content: center;
-  }
-`
-
-const BurgerNavWrap = styled.div`
-  position: releative;
-
-  @media ${({ theme }) => theme.breakpoint.tablet} {
-    display: none;
   }
 `
 
