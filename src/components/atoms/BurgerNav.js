@@ -63,13 +63,16 @@ const CoffeeSideBar = styled.div`
   bottom: 0;
   right: 25px;
   left: 0;
+  width: 95%;
   text-align: center;
   font-family: "Fraunces";
   font-size: 24px;
   line-height: 3.2;
   background: linear-gradient(var(--lightCreamBG) 45%, transparent);
-  z-index: ${props => (props.modalOpen ? "2" : "-1")};
-  transition: transform 0.3s ease-in-out;
+  transform: ${props =>
+    props.modalOpen ? "translateY(0)" : "translateY(-110%)"};
+  z-index: 2;
+  transition: transform 0.2s ease-in-out;
   text-align: center;
 
   ul {

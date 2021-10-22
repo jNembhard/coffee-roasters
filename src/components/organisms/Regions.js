@@ -9,7 +9,7 @@ const Region = () => {
         <Title>Our headquarters</Title>
 
         {regions.map(region => (
-          <Container>
+          <Container key={region.id}>
             <Image
               src={region.countryImg}
               width={region.width}

@@ -105,6 +105,48 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `planbg`,
+        path: `${__dirname}/src/data/plan-page/planbg`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `drinks`,
+        path: `${__dirname}/src/data/plan-page/plantab/drinks`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `types`,
+        path: `${__dirname}/src/data/plan-page/plantab/types`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `grams`,
+        path: `${__dirname}/src/data/plan-page/plantab/grams`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `grinds`,
+        path: `${__dirname}/src/data/plan-page/plantab/grinds`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `delivery`,
+        path: `${__dirname}/src/data/plan-page/plantab/delivery`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `heroes`,
         path: `${__dirname}/src/data/heroes`,
       },

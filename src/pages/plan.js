@@ -1,23 +1,14 @@
 import * as React from "react"
-// import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/organisms/Layout"
 import Seo from "../components/seo"
+import PlanHero from "../components/molecules/PlanHero"
+import ProcessPlan from "../components/organisms/ProcessPlan"
 
 const PlanPage = () => (
   <Layout>
     <Seo title="Create Your Plan" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
+    <PlanHero />
+    <ProcessPlan />
   </Layout>
 )
 
