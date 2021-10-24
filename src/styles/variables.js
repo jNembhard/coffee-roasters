@@ -6,6 +6,7 @@ export const variables = css`
     --darkGreyBlue: #333d4b;
     --grey: #83888f;
     --lightCreamBG: #fefcf7;
+    --specialCream: #f4f1eb;
     --paleOrange: #fdd6ba;
 
     --barlowRegular: 400;
