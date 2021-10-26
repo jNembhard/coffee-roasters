@@ -74,10 +74,11 @@ const CoffeeCollection = styled.div`
       /* 180deg, */ var(--darkGreyBlue),
       var(--lightCreamBG)
     );
-    background-clip: text;
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
+    background-clip: text;
     -moz-text-fill-color: transparent;
     margin-bottom: 26px;
   }

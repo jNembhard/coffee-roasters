@@ -8,7 +8,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    `gatsby-optional-chaining`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-image`,
     {
@@ -112,36 +111,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `drinks`,
-        path: `${__dirname}/src/data/plan-page/plantab/drinks`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `types`,
-        path: `${__dirname}/src/data/plan-page/plantab/types`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `grams`,
-        path: `${__dirname}/src/data/plan-page/plantab/grams`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `grinds`,
-        path: `${__dirname}/src/data/plan-page/plantab/grinds`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `delivery`,
-        path: `${__dirname}/src/data/plan-page/plantab/delivery`,
+        name: `plantab`,
+        path: `${__dirname}/src/data/plan-page/plantab`,
       },
     },
     {

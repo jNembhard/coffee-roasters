@@ -1,12 +1,9 @@
 import React, { useState, useRef } from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 import styled from "styled-components"
 import arrow from "../../images/assets/plan/desktop/icon-arrow.svg"
 import PropTypes from "prop-types"
-import Options from "../atoms/Options"
 
-const Accordion = () => {
+const Accordion = ({ children, dropdownTitle }) => {
   const [active, setActive] = useState("")
   const [height, setHeight] = useState("0px")
   const [rotate, setRotate] = useState("accordion__icon")
@@ -25,15 +22,26 @@ const Accordion = () => {
     <>
       <AccordionWrap>
         <Button className={`${active}`} onClick={toggleAccordion}>
-          <DropdownTitle>How do you drink your coffee</DropdownTitle>
+          <DropdownTitle>{dropdownTitle}</DropdownTitle>
           <Arrow src={arrow} className={`${rotate}`} alt="" />
         </Button>
         <Container ref={content} style={{ maxHeight: `${setHeight}` }}>
-          <Content>{active && <Options />}</Content>
+          <Content>{active && children}</Content>
         </Container>
       </AccordionWrap>
     </>
   )
+}
+
+Accordion.propTypes = {
+  children: PropTypes.node.isRequired,
+  dropdownTitle: PropTypes.string,
+  fieldsets: PropTypes.string,
+}
+
+Accordion.defaultTypes = {
+  dropdownTitle: ``,
+  fieldsets: PropTypes.string,
 }
 
 export default Accordion

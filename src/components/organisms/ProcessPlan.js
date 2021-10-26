@@ -8,7 +8,7 @@ const ProcessPlan = () => {
   const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(
-        filter: { frontmatter: { number: { gte: 40, lt: 43 } } }
+        filter: { frontmatter: { number: { gte: 41, lt: 44 } } }
         sort: { fields: frontmatter___number, order: ASC }
       ) {
         nodes {

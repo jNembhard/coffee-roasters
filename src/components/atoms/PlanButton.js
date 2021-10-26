@@ -24,11 +24,14 @@ const Button = styled.button`
   line-height: 25px;
   width: 217px;
   height: 56px;
-  /* padding: 0; */
   border: none;
   background-color: var(--darkCyan);
   color: var(--lightCreamBG);
 
   border-radius: 8px;
   cursor: pointer;
+
+  &:hover {
+    filter: opacity(85%);
+  }
 `
