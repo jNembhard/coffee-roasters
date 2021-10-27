@@ -49,7 +49,7 @@ export default Accordion
 const AccordionWrap = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 120px 0 110px;
+  margin: 120px 0 96px;
 
   .accordion__icon {
     margin-left: auto;

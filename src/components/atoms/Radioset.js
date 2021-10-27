@@ -1,11 +1,35 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
 const Radioset = ({ numID, group, value, title, description }) => {
+  const [active, setActive] = useState("capsule")
+  const [click, setClick] = useState("")
+
+  const handleStepChange = e => {
+    e.preventDefault()
+    setActive(e.target.value)
+  }
+
+  const handleClick = e => {
+    setClick(e.target.value)
+  }
+
+  const resetRadioState = () => {
+    setActive("")
+  }
+  // console.log(active)
+
   return (
-    <FieldWrap>
-      <input type="radio" id={numID} name={group} value={value} />
+    <FieldWrap id={group}>
+      <input
+        type="radio"
+        id={numID}
+        name={group}
+        value={value}
+        checked={value}
+        onChange={handleStepChange}
+      />
       <Label for={numID}>
         <Title>{title}</Title>
         <DContainer>
@@ -34,9 +58,10 @@ Radioset.defaultTypes = {
   description: ``,
 }
 
-const FieldWrap = styled.div`
+const FieldWrap = styled.fieldset`
   display: flex;
   flex-direction: column;
+  border: 0;
 
   input[type="radio"] {
     display: none;
