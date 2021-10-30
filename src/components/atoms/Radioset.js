@@ -2,23 +2,17 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-const Radioset = ({ numID, group, value, title, description }) => {
-  const [active, setActive] = useState("capsule")
-  const [click, setClick] = useState("")
+const Radioset = ({ numID, group, title, description }) => {
+  const [active, setActive] = useState("")
 
-  const handleStepChange = e => {
-    e.preventDefault()
+  const handleChange = e => {
     setActive(e.target.value)
-  }
-
-  const handleClick = e => {
-    setClick(e.target.value)
+    console.log(e.target.value)
   }
 
   const resetRadioState = () => {
     setActive("")
   }
-  // console.log(active)
 
   return (
     <FieldWrap id={group}>
@@ -26,11 +20,10 @@ const Radioset = ({ numID, group, value, title, description }) => {
         type="radio"
         id={numID}
         name={group}
-        value={value}
-        checked={value}
-        onChange={handleStepChange}
+        value={title}
+        onChange={handleChange}
       />
-      <Label for={numID}>
+      <Label htmlFor={numID}>
         <Title>{title}</Title>
         <DContainer>
           <Description>{description}</Description>

@@ -16,6 +16,7 @@ const ProcessAtom = () => {
             description
             number
           }
+          id
         }
       }
     }
@@ -27,7 +28,7 @@ const ProcessAtom = () => {
     <>
       <Circles />
       {steps.map(step => (
-        <StepContainer>
+        <StepContainer key={step.id}>
           <Step>{`0${step.frontmatter.step}`}</Step>
           <Title>{step.frontmatter.title}</Title>
           <Description>{step.frontmatter.description}</Description>

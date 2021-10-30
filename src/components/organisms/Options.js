@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React, { createContext, useContext } from "react"
 import styled from "styled-components"
 import Accordion from "../molecules/Accordion"
 import Radioset from "../atoms/Radioset"
 import options from "../../data/plan-page/plantab/options"
+import Summary from "../atoms/Summary"
 
 const Options = () => {
   const handleSubmit = e => {
@@ -19,13 +20,13 @@ const Options = () => {
                 key={index}
                 numID={step.numID}
                 group={step.group}
-                value={step.value}
                 title={step.title}
                 description={step.description}
               />
             ))}
           </Accordion>
         ))}
+        <Summary />
       </OptionsForm>
     </>
   )

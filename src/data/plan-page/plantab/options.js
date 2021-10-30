@@ -2,18 +2,17 @@ const options = [
   {
     id: 1,
     title: "How do you drink your coffee?",
+    name: "drink",
     steps: [
       {
         numID: "first",
         group: "group1",
-        value: "capsule",
         title: "Capsule",
         description: "Compatible with Nespresso systems and similar brewers",
       },
       {
         numID: "second",
         group: "group1",
-        value: "filter",
         title: "Filter",
         description:
           "For pour over or drip methods like Aeropress, Chemex, and V60",
@@ -21,7 +20,6 @@ const options = [
       {
         numID: "third",
         group: "group1",
-        value: "espresso",
         title: "Espresso",
         description:
           "Dense and finely ground beans for an intense, flavorful experience",
@@ -31,11 +29,11 @@ const options = [
   {
     id: 2,
     title: "What type of coffee?",
+    name: "type",
     steps: [
       {
         numID: "fourth",
         group: "group2",
-        value: "single",
         title: "Single Origin",
         description:
           "Distinct, high quality coffee from a specific family-owned farm",
@@ -43,7 +41,6 @@ const options = [
       {
         numID: "fifth",
         group: "group2",
-        value: "decaf",
         title: "Decaf",
         description:
           "Just like regular coffee, except the caffeine has been removed",
@@ -51,7 +48,6 @@ const options = [
       {
         numID: "sixth",
         group: "group2",
-        value: "blended",
         title: "Blended",
         description:
           "Combination of two or three dark roasted beans of organic coffees",
@@ -61,11 +57,11 @@ const options = [
   {
     id: 3,
     title: "How much would you like?",
+    name: "quantity",
     steps: [
       {
         numID: "seventh",
         group: "group3",
-        value: "250g",
         title: "250g",
         description:
           "Perfect for the solo drinker. Yields about 12 delicious cups.",
@@ -73,7 +69,6 @@ const options = [
       {
         numID: "eighth",
         group: "group3",
-        value: "500g",
         title: "500g",
         description:
           "Perfect option for a couple. Yields about 40 delectable cups.",
@@ -81,7 +76,6 @@ const options = [
       {
         numID: "ninth",
         group: "group3",
-        value: "1000g",
         title: "1000g",
         description:
           "Perfect for offices and events. Yields about 90 delightful cups.",
@@ -92,26 +86,24 @@ const options = [
   {
     id: 4,
     title: "Want us to grind them?",
+    name: "grind",
     steps: [
       {
         numID: "tenth",
         group: "group4",
-        value: "wholebean",
         title: "Wholebean",
         description: "Best choice if you cherish the full sensory experience",
       },
       {
         numID: "eleventh",
         group: "group4",
-        value: "fillter",
         title: "Filter",
         description:
           "For pour over or drip methods like Aeropress, Chemex, and V60",
       },
       {
-        numID: "tweleveth",
+        numID: "twelfth",
         group: "group4",
-        value: "cafetiere",
         title: "Cafetiére",
         description:
           "Course ground beans specially suited for french press coffee",
@@ -121,25 +113,23 @@ const options = [
   {
     id: 5,
     title: "How often should we deliver?",
+    name: "delivery",
     steps: [
       {
         numID: "thirteenth",
         group: "group5",
-        value: "weekly",
         title: "Every week",
         description: "$14.00 per shipment. Includes free first-class shipping.",
       },
       {
         numID: "fourteenth",
         group: "group5",
-        value: "biweekly",
         title: "Every 2 weeks",
         description: "$17.25 per shipment. Includes free priority shipping.",
       },
       {
         numID: "fifteenth",
         group: "group5",
-        value: "monthly",
         title: "Every month",
         description: "$22.50 per shipment. Includes free priority shipping.",
       },

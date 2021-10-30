@@ -118,6 +118,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `order`,
+        path: `${__dirname}/src/data/plan-page/order`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `heroes`,
         path: `${__dirname}/src/data/heroes`,
       },

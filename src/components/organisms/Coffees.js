@@ -21,7 +21,7 @@ const Coffees = () => {
             number
             coffee
           }
-
+          id
           html
         }
       }
@@ -35,10 +35,9 @@ const Coffees = () => {
       <CoffeeCollection>
         <h1>Our collection</h1>
         {coffees.map(coffee => (
-          <CoffeesContainer key={coffee.number}>
+          <CoffeesContainer key={coffee.id}>
             <CoffeeBags>
               <GatsbyImage
-                key={coffee.number}
                 image={getImage(
                   coffee.frontmatter.coffeeImg?.childImageSharp?.gatsbyImageData
                 )}
