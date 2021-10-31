@@ -7,7 +7,7 @@ const options = [
       {
         numID: "first",
         group: "group1",
-        title: "Capsule",
+        title: "Capsules",
         description: "Compatible with Nespresso systems and similar brewers",
       },
       {

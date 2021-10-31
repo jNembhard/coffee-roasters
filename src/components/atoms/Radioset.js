@@ -1,18 +1,10 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
+import { useSharedSummary } from "../../hooks/useSummary"
 
 const Radioset = ({ numID, group, title, description }) => {
-  const [active, setActive] = useState("")
-
-  const handleChange = e => {
-    setActive(e.target.value)
-    console.log(e.target.value)
-  }
-
-  const resetRadioState = () => {
-    setActive("")
-  }
+  const { handleChange } = useSharedSummary()
 
   return (
     <FieldWrap id={group}>

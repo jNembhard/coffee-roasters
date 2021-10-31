@@ -1,12 +1,13 @@
-import React, { useContext, useRef, useState } from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import React from "react"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 import PlanButton from "../atoms/PlanButton"
 import styled from "styled-components"
-import options from "../../data/plan-page/plantab/options"
-import { PlanContext } from "../../contexts/PlanContext"
+import { useSharedSummary } from "../../hooks/useSummary"
 
 const Summary = () => {
+  const { group1, group2, group3, group4, group5 } = useSharedSummary()
+
   const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(
@@ -25,34 +26,6 @@ const Summary = () => {
       }
     }
   `)
-
-  const { dispatch } = useContext(PlanContext)
-  const [title, setTitle] = useState("_____")
-
-  const initialState = {
-    drink: null,
-    type: null,
-    quantity: null,
-    grind: null,
-    delivery: null,
-  }
-
-  const handle = () => {
-    counter.current = counter.current + 1
-  }
-
-  const handleChange = e => {
-    console.log(title)
-    dispatch({ type: "ADD_DRINK", drink: { title } })
-  }
-
-  const [orderData, setOrderData] = useState(initialState)
-
-  // const drink = orderData.drink === null ? "_____" : orderData.drink
-  // const type = orderData.type === null ? "_____" : orderData.type
-  // const quantity = orderData.quantity === null ? "_____" : orderData.quantity
-  // const grind = orderData.grind === null ? "_____" : orderData.grind
-  // const delivery = orderData.delivery === null ? "_____" : orderData.delivery
 
   const orders = data.allMarkdownRemark.nodes
 
@@ -80,13 +53,26 @@ const Summary = () => {
           <OrderContainer>
             <Title>Order Summary</Title>
             <Description>
-              “I drink coffee <span>_____</span>, with a <span>_____</span>
-              type of bean. <span>_____</span> ground ala
-              <span>______</span>, sent to me <span>______</span>.”
+              “I drink coffee{" "}
+              <span className="special">
+                {group1 === "Capsules" ? "using " : "as "}
+              </span>
+              <span>{group1 ? group1 : "_____"}</span>, with a{" "}
+              <span>{group2 ? group2 : "_____"}</span> type of bean.{" "}
+              <span>{group3 ? group3 : "_____"}</span>{" "}
+              {group1 !== "Capsules" && (
+                <span className="special">ground ala </span>
+              )}
+              {group1 !== "Capsules" && (
+                <span>{group4 ? ` ${group4}` : ` _____`}</span>
+              )}
+              , sent to me <span>{group5 ? group5 : "_____"}</span>.”
             </Description>
           </OrderContainer>
         </ImageContainer>
-        <PlanButton />
+        <Link to="/order" style={{ textDecoration: `none` }}>
+          <PlanButton />
+        </Link>
       </SummaryWrap>
     </>
   )
@@ -136,8 +122,14 @@ const Description = styled.h2`
   background-color: transparent;
   margin-right: 10px;
 
+  .special {
+    color: inherit;
+    text-transform: none;
+  }
+
   span {
     color: var(--darkCyan);
     background-color: transparent;
+    text-transform: capitalize;
   }
 `

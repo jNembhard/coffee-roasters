@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import PlanButton from "../atoms/PlanButton"
 import ProcessAtom from "../atoms/ProcessAtom"
+import { Link } from "gatsby"
 
 const Process = () => {
   return (
@@ -10,7 +11,9 @@ const Process = () => {
         <h3>How it works</h3>
         <ProcessAtom />
         <ButtonWrap>
-          <PlanButton />
+          <Link to="/plan" style={{ textDecoration: `none` }}>
+            <PlanButton />
+          </Link>
         </ButtonWrap>
       </ProcessContainer>
     </ProcessWrap>

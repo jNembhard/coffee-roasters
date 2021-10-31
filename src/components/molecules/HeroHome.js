@@ -1,6 +1,6 @@
 import React from "react"
 import PlanButton from "../atoms/PlanButton"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 import styled from "styled-components"
 
@@ -64,7 +64,9 @@ const HeroHome = () => {
             curated artisan coffees from our best roasters delivered directly to
             your door, at your schedule.
           </Description>
-          <PlanButton />
+          <Link to="/plan" style={{ textDecoration: `none` }}>
+            <PlanButton />
+          </Link>
         </HeroContainer>
       </HeroWrap>
     </>

@@ -36,12 +36,10 @@ const Accordion = ({ children, dropdownTitle }) => {
 Accordion.propTypes = {
   children: PropTypes.node.isRequired,
   dropdownTitle: PropTypes.string,
-  fieldsets: PropTypes.string,
 }
 
 Accordion.defaultTypes = {
   dropdownTitle: ``,
-  fieldsets: PropTypes.string,
 }
 
 export default Accordion
@@ -49,7 +47,8 @@ export default Accordion
 const AccordionWrap = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 120px 0 96px;
+  margin: 100px 0 98px;
+  /* border: 1px solid transparent; */
 
   .accordion__icon {
     margin-left: auto;

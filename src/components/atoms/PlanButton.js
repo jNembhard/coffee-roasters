@@ -1,15 +1,23 @@
 import React from "react"
-import { Link } from "gatsby"
+import PropTypes from "prop-types"
 import styled from "styled-components"
 
 const PlanButton = () => {
   return (
     <>
-      <Link to="/plan" style={{ textDecoration: `none` }}>
-        <Button>Create your plan</Button>
-      </Link>
+      <Button>Create your plan</Button>
     </>
   )
+}
+
+PlanButton.propTypes = {
+  link: PropTypes.string,
+  modal: PropTypes.bool,
+}
+
+PlanButton.defaultTypes = {
+  link: ``,
+  modal: false,
 }
 
 export default PlanButton
