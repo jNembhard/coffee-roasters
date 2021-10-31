@@ -2,6 +2,7 @@ import { css } from "styled-components"
 
 export const variables = css`
   :root {
+    --cyan: #66d2cf;
     --darkCyan: #0e8784;
     --darkGreyBlue: #333d4b;
     --grey: #83888f;

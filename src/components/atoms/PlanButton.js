@@ -40,6 +40,6 @@ const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    filter: opacity(85%);
+    background-color: var(--cyan);
   }
 `
