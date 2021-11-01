@@ -1,12 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 import PlanButton from "../atoms/PlanButton"
 import styled from "styled-components"
 import { useSharedSummary } from "../../hooks/useSummary"
+import OrderModal from "../molecules/OrderModal"
 
 const Summary = () => {
   const { group1, group2, group3, group4, group5 } = useSharedSummary()
+  const [show, setShow] = useState(false)
 
   const data = useStaticQuery(graphql`
     {
@@ -70,9 +72,8 @@ const Summary = () => {
             </Description>
           </OrderContainer>
         </ImageContainer>
-        <Link to="/order" style={{ textDecoration: `none` }}>
-          <PlanButton />
-        </Link>
+        <PlanButton onOpen={() => setShow(true)} />
+        <OrderModal onClose={() => setShow(false)} show={show} />
       </SummaryWrap>
     </>
   )
@@ -86,6 +87,7 @@ const SummaryWrap = styled.div`
   align-items: center;
   justify-content: center;
   margin: 24px 23px 120px;
+  transition: all 0.3s ease-in-out;
   /* border: 1px solid red; */
 `
 

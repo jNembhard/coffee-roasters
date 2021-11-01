@@ -2,10 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-const PlanButton = () => {
+const PlanButton = ({ onOpen }) => {
   return (
     <>
-      <Button>Create your plan</Button>
+      <Button onClick={onOpen}>Create your plan</Button>
     </>
   )
 }

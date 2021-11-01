@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useEffect } from "react"
+import ReactDOM from "react-dom"
 import styled from "styled-components"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const Order = () => {
+const Order = ({ show, onClose }) => {
   const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(filter: { frontmatter: { sumNum: { eq: 3 } } }) {
@@ -29,13 +30,13 @@ const Order = () => {
   return (
     <OrderWrap>
       <TopContainer>
-        <GatsbyImage
+        {/* <GatsbyImage
           image={images}
           loading="eager"
           className="art-directed"
           formats={["auto", "webp", "avif"]}
           alt=""
-        />
+        /> */}
         <Title>Order Summary</Title>
       </TopContainer>
       <Quote>
@@ -47,9 +48,9 @@ const Order = () => {
         selection if something is off. Subscription discount codes can also be
         redeemed at the checkout.
       </Description>
-      <Linked to="/plan" style={{ textDecoration: `none` }}>
-        <CheckoutButton>Checkout - $14.00/mo</CheckoutButton>
-      </Linked>
+      {/* <Linked to="/plan" style={{ textDecoration: `none` }}> */}
+      <CheckoutButton>Checkout - $14.00/mo</CheckoutButton>
+      {/* </Linked> */}
     </OrderWrap>
   )
 }
@@ -57,6 +58,7 @@ const Order = () => {
 export default Order
 
 const OrderWrap = styled.div`
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,7 +67,7 @@ const OrderWrap = styled.div`
   height: 597px;
   border: 1px solid red;
   border-radius: 8px;
-  /* background-color: black; */
+  background-color: rgba(0, 0, 0, 0.5);
 `
 
 const TopContainer = styled.div`
