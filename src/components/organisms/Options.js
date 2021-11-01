@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Accordion from "../molecules/Accordion"
 import Radioset from "../atoms/Radioset"
 import options from "../../data/plan-page/plantab/options"
-import Summary from "../atoms/Summary"
+import Summary from "../molecules/Summary"
 
 const Options = () => {
   const handleSubmit = e => {

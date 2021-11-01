@@ -4,10 +4,11 @@ import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 import PlanButton from "../atoms/PlanButton"
 import styled from "styled-components"
 import { useSharedSummary } from "../../hooks/useSummary"
-import OrderModal from "../molecules/OrderModal"
+import OrderModal from "./OrderModal"
+import Quotes from "../atoms/Quotes"
 
 const Summary = () => {
-  const { group1, group2, group3, group4, group5 } = useSharedSummary()
+  // const { group1, group2, group3, group4, group5 } = useSharedSummary()
   const [show, setShow] = useState(false)
 
   const data = useStaticQuery(graphql`
@@ -54,22 +55,7 @@ const Summary = () => {
           />
           <OrderContainer>
             <Title>Order Summary</Title>
-            <Description>
-              “I drink coffee{" "}
-              <span className="special">
-                {group1 === "Capsules" ? "using " : "as "}
-              </span>
-              <span>{group1 ? group1 : "_____"}</span>, with a{" "}
-              <span>{group2 ? group2 : "_____"}</span> type of bean.{" "}
-              <span>{group3 ? group3 : "_____"}</span>{" "}
-              {group1 !== "Capsules" && (
-                <span className="special">ground ala </span>
-              )}
-              {group1 !== "Capsules" && (
-                <span>{group4 ? ` ${group4}` : ` _____`}</span>
-              )}
-              , sent to me <span>{group5 ? group5 : "_____"}</span>.”
-            </Description>
+            <Quotes />
           </OrderContainer>
         </ImageContainer>
         <PlanButton onOpen={() => setShow(true)} />
@@ -88,7 +74,6 @@ const SummaryWrap = styled.div`
   justify-content: center;
   margin: 24px 23px 120px;
   transition: all 0.3s ease-in-out;
-  /* border: 1px solid red; */
 `
 
 const ImageContainer = styled.div`
@@ -109,29 +94,15 @@ const OrderContainer = styled.div`
   position: absolute;
   margin: -320px 25px 32px;
   background-color: transparent;
+
+  .quotes {
+    color: var(--lightCreamBG);
+    margin-right: 10px;
+  }
 `
 
 const Title = styled.p`
   text-transform: uppercase;
   color: var(--grey);
   background-color: transparent;
-`
-
-const Description = styled.h2`
-  font-size: 24px;
-  line-height: 40px;
-  color: var(--lightCreamBG);
-  background-color: transparent;
-  margin-right: 10px;
-
-  .special {
-    color: inherit;
-    text-transform: none;
-  }
-
-  span {
-    color: var(--darkCyan);
-    background-color: transparent;
-    text-transform: capitalize;
-  }
 `

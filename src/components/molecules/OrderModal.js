@@ -1,8 +1,8 @@
 import React, { useEffect } from "react"
-import { useSharedSummary } from "../../hooks/useSummary"
 import styled from "styled-components"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Quotes from "../atoms/Quotes"
 
 const OrderModal = ({ onClose, show }) => {
   const closeOnEsc = e => {
@@ -11,12 +11,12 @@ const OrderModal = ({ onClose, show }) => {
     }
   }
 
-  // useEffect(() => {
-  //   document.body.addEventListener("keydown", closeOnEsc)
-  //   return function cleanup() {
-  //     document.body.removeEventListener("keydown", closeOnEsc)
-  //   }
-  // }, [])
+  useEffect(() => {
+    document.body.addEventListener("keydown", closeOnEsc)
+    return function cleanup() {
+      document.body.removeEventListener("keydown", closeOnEsc)
+    }
+  }, [])
 
   const data = useStaticQuery(graphql`
     {
@@ -40,7 +40,6 @@ const OrderModal = ({ onClose, show }) => {
     orders[0].frontmatter.summaryImg.childImageSharp.gatsbyImageData
   )
 
-  const { group1, group2, group3, group4, group5 } = useSharedSummary()
   if (!show) return null
 
   return (
@@ -56,22 +55,7 @@ const OrderModal = ({ onClose, show }) => {
           />
           <Title>Order Summary</Title>
         </ModalHeader>
-        <Quote>
-          “I drink coffee{" "}
-          <span className="special">
-            {group1 === "Capsules" ? "using " : "as "}
-          </span>
-          <span>{group1 ? group1 : "_____"}</span>, with a{" "}
-          <span>{group2 ? group2 : "_____"}</span> type of bean.{" "}
-          <span>{group3 ? group3 : "_____"}</span>{" "}
-          {group1 !== "Capsules" && (
-            <span className="special">ground ala </span>
-          )}
-          {group1 !== "Capsules" && (
-            <span>{group4 ? ` ${group4}` : ` _____`}</span>
-          )}
-          , sent to me <span>{group5 ? group5 : "_____"}</span>.”
-        </Quote>
+        <QuotesTwo />
         <Description>
           Is this correct? You can proceed to checkout or go back to plan
           selection if something is off. Subscription discount codes can also be
@@ -97,6 +81,11 @@ const ModalWrap = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 2;
+
+  .quotes {
+    color: var(--grey);
+    margin: 40px 24px 0;
+  }
 `
 const ModalContent = styled.div`
   width: 327px;
@@ -114,24 +103,6 @@ const ModalHeader = styled.div`
     position: relative;
     background-color: transparent;
     border-radius: 8px 8px 0 0;
-  }
-`
-
-const Quote = styled.h2`
-  color: var(--grey);
-  margin: 40px 24px 0;
-  font-size: 24px;
-  line-height: 40px;
-
-  .special {
-    color: inherit;
-    text-transform: none;
-  }
-
-  span {
-    color: var(--darkCyan);
-    background-color: transparent;
-    text-transform: capitalize;
   }
 `
 
@@ -172,3 +143,5 @@ const CheckoutButton = styled.button`
     background-color: var(--cyan);
   }
 `
+
+const QuotesTwo = styled(Quotes)``
