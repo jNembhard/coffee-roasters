@@ -3,8 +3,10 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Quotes from "../atoms/Quotes"
+import { useSharedSummary } from "../../hooks/useSummary"
 
 const OrderModal = ({ onClose, show }) => {
+  const { shippingCost } = useSharedSummary()
   const closeOnEsc = e => {
     if ((e.charCode || e.keyCode) === 27) {
       onClose()
@@ -61,7 +63,9 @@ const OrderModal = ({ onClose, show }) => {
           selection if something is off. Subscription discount codes can also be
           redeemed at the checkout.
         </Description>
-        <CheckoutButton onClick={onClose}>Checkout - $14.00/mo</CheckoutButton>
+        <CheckoutButton
+          onClick={onClose}
+        >{`Checkout - $${shippingCost()}/mo`}</CheckoutButton>
       </ModalContent>
     </ModalWrap>
   )

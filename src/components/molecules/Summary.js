@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 import PlanButton from "../atoms/PlanButton"
 import styled from "styled-components"
@@ -8,7 +8,6 @@ import OrderModal from "./OrderModal"
 import Quotes from "../atoms/Quotes"
 
 const Summary = () => {
-  // const { group1, group2, group3, group4, group5 } = useSharedSummary()
   const [show, setShow] = useState(false)
 
   const data = useStaticQuery(graphql`
@@ -43,6 +42,7 @@ const Summary = () => {
       },
     ]
   )
+
   return (
     <>
       <SummaryWrap>

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { useBetween } from "use-between"
 
 const initialState = {
@@ -22,9 +22,37 @@ const useSummary = () => {
     setActive(prevState => ({ ...prevState, [name]: value }))
   }
 
-  console.log(group1)
+  const shippingCost = () => {
+    if (group3 === "250g") {
+      return group5 === "Every week"
+        ? 7.2 * 4
+        : group5 === "Every 2 weeks"
+        ? 9.6 * 2
+        : 12.0
+    } else if (group3 === "500g") {
+      return group5 === "Every week"
+        ? 13 * 4
+        : group5 === "Every 2 weeks"
+        ? 17.5 * 2
+        : 22.0
+    } else {
+      return group5 === "Every week"
+        ? 22 * 4
+        : group5 === "Every 2 weeks"
+        ? 32 * 2
+        : 42.0
+    }
+  }
 
-  return { group1, group2, group3, group4, group5, handleChange }
+  return {
+    group1,
+    group2,
+    group3,
+    group4,
+    group5,
+    handleChange,
+    shippingCost,
+  }
 }
 
 export const useSharedSummary = () => useBetween(useSummary)
