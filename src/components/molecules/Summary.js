@@ -73,18 +73,28 @@ const SummaryWrap = styled.div`
   justify-content: center;
   margin: 24px 23px 120px;
   transition: all 0.3s ease-in-out;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 24px 40px 144px;
+  }
 `
 
 const ImageContainer = styled.div`
   margin: 0 0 56px;
   .art-directed {
     position: relative;
-    /* width: 328px; */
+    width: 328px;
     height: 338px;
     border-radius: 8px;
 
     @media screen and (min-width: 767px) {
+      width: 689px;
+      height: 208px;
       margin: 0 40px;
+
+      @media screen and (min-width: 992px) {
+        margin: 0 80px;
+      }
     }
   }
 `
@@ -93,6 +103,10 @@ const OrderContainer = styled.div`
   position: absolute;
   margin: -320px 25px 32px;
   background-color: transparent;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: -200px 73px 27px;
+  }
 
   .quotes {
     color: var(--lightCreamBG);

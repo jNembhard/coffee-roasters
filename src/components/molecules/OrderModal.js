@@ -63,9 +63,13 @@ const OrderModal = ({ onClose, show }) => {
           selection if something is off. Subscription discount codes can also be
           redeemed at the checkout.
         </Description>
-        <CheckoutButton
-          onClick={onClose}
-        >{`Checkout - $${shippingCost()}/mo`}</CheckoutButton>
+        <CheckoutContainer>
+          <BigPrice>{`$${shippingCost()} / mo`}</BigPrice>
+          <CheckoutButton onClick={onClose}>
+            Checkout
+            <span className="price-span">{` - $${shippingCost()}/mo`}</span>
+          </CheckoutButton>
+        </CheckoutContainer>
       </ModalContent>
     </ModalWrap>
   )
@@ -86,9 +90,16 @@ const ModalWrap = styled.div`
   justify-content: center;
   z-index: 2;
 
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+  }
+
   .quotes {
     color: var(--grey);
     margin: 40px 24px 0;
+
+    @media ${({ theme }) => theme.breakpoint.tablet} {
+      margin: 57px 56px 7px;
+    }
   }
 `
 const ModalContent = styled.div`
@@ -96,6 +107,11 @@ const ModalContent = styled.div`
   height: 597px;
   margin: 0 35px;
   border-radius: 8px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    width: 540px;
+    height: 597px;
+  }
 `
 
 const ModalHeader = styled.div`
@@ -119,12 +135,24 @@ const Title = styled.h2`
   background-color: transparent;
   margin-left: 24px;
   margin-top: -55px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: -88px 150px 40px 56px;
+    font-size: 40px;
+    line-height: 48px;
+  }
 `
+
 const Description = styled.div`
   font-size: 15px;
   line-height: 25px;
   color: var(--darkGreyBlue);
   margin: 0 24px 24px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 0 56px 47px;
+    width: 428px;
+  }
 `
 
 const CheckoutButton = styled.button`
@@ -143,8 +171,38 @@ const CheckoutButton = styled.button`
   cursor: pointer;
   margin: 0 24px 24px;
 
+  .price-span {
+    background-color: transparent;
+    white-space: pre-wrap;
+
+    @media ${({ theme }) => theme.breakpoint.tablet} {
+      display: none;
+    }
+  }
+
   &:hover {
     background-color: var(--cyan);
+  }
+`
+
+const BigPrice = styled.span`
+  display: none;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    display: unset;
+    font-family: "Fraunces";
+    font-size: 32px;
+    line-height: 36px;
+    color: var(--darkGreyBlue);
+    width: 200px;
+    margin: 10px 13px;
+  }
+`
+
+const CheckoutContainer = styled.div`
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 47px 56px 56px;
+    display: flex;
   }
 `
 

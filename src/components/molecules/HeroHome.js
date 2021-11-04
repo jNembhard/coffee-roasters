@@ -31,7 +31,7 @@ const HeroHome = () => {
     getImage(heroes[2].frontmatter.homeImg.childImageSharp.gatsbyImageData),
     [
       {
-        media: "(max-width: 765px)",
+        media: "(max-width: 600px)",
         image: getImage(
           heroes[0].frontmatter.homeImg.childImageSharp.gatsbyImageData
         ),
@@ -89,15 +89,27 @@ const HeroWrap = styled.div`
 
 const ImageWrap = styled.div`
   position: relative;
+  margin: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 0 40px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 0 80px;
+    }
+  }
+
   .art-directed {
-    margin: 0 24px;
     height: 500px;
     border-radius: 8px;
     @media screen and (min-width: 767px) {
-      margin: 0 39px;
+      width: 689px;
 
       @media screen and (min-width: 992px) {
-        margin: 0 80px;
+        width: 1280px;
         height: 600px;
       }
     }

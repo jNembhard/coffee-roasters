@@ -48,7 +48,6 @@ const AccordionWrap = styled.div`
   display: flex;
   flex-direction: column;
   margin: 100px 0 98px;
-  /* border: 1px solid transparent; */
 
   .accordion__icon {
     margin-left: auto;
@@ -77,17 +76,39 @@ const DropdownTitle = styled.h4`
   color: var(--grey);
   text-align: left;
   margin-bottom: 0;
+  width: 240px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    font-size: 32px;
+    line-height: 48px;
+    width: 503px;
+  }
 `
 
 const Container = styled.div`
-  background-color: white;
   overflow: hidden;
   transition: max-height 0.6s ease;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 40px 0 0;
+  }
 `
 
 const Content = styled.div`
   font-size: 14px;
   padding: 0 24px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
 `
 
-const Arrow = styled.img``
+const Arrow = styled.img`
+  margin: 42px 21px 22px 69px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 28px 0 0;
+  }
+`

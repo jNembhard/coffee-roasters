@@ -92,6 +92,17 @@ const AboutHeroWrap = styled.div`
 const ImageContainer = styled.div`
   position: relative;
   margin: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 0 40px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 0 80px;
+    }
+  }
 
   .art-directed {
     width: 327px;

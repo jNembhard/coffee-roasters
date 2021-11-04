@@ -48,6 +48,12 @@ const FieldWrap = styled.fieldset`
   flex-direction: column;
   border: 0;
 
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    flex-direction: unset;
+    width: 223px;
+    height: 250px;
+  }
+
   input[type="radio"] {
     display: none;
   }
@@ -89,6 +95,12 @@ const Label = styled.label`
   transition: all 0.3s;
   cursor: pointer;
   border-radius: 8px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    width: 223px;
+    height: 250px;
+    margin: 0 5px;
+  }
 
   &:hover {
     background-color: var(--paleOrange);
