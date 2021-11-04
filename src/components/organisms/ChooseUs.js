@@ -29,13 +29,23 @@ const ChoiceWrap = styled.div`
   justify-content: center;
   text-align: center;
   margin-bottom: 680px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin-bottom: 434px;
+  }
 `
 const Container = styled.div`
-  width: 327px;
+  margin: 0 24px;
   height: 902px;
   background-color: var(--darkGreyBlue);
   border-radius: 8px;
   position: relative;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 0 40px;
+    height: 573px;
+    width: 688px;
+  }
 `
 
 const TitleChoice = styled.h1`
@@ -51,12 +61,22 @@ const DescriptionChoice = styled.p`
   background-color: var(--darkGreyBlue);
   font-size: 15px;
   line-height: 25px;
-  width: 279px;
   height: 125px;
   margin: 0 24px 64px;
+  max-width: 500px;
+  min-width: 279px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    max-width: 540px;
+    margin: 0 100px 64px;
+  }
 `
 const ContainerTwo = styled.div`
   background-color: transparent;
   position: absolute;
   margin-top: 880px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin-top: 555px;
+  }
 `

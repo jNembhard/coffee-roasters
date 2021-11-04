@@ -44,10 +44,12 @@ const Coffees = () => {
                 alt={coffee.frontmatter.coffee}
               />
             </CoffeeBags>
-            <Title>{coffee.frontmatter.coffee}</Title>
-            <Description
-              dangerouslySetInnerHTML={{ __html: sanitizeHtml(coffee.html) }}
-            />
+            <DesContainer>
+              <Title>{coffee.frontmatter.coffee}</Title>
+              <Description
+                dangerouslySetInnerHTML={{ __html: sanitizeHtml(coffee.html) }}
+              />
+            </DesContainer>
           </CoffeesContainer>
         ))}
       </CoffeeCollection>
@@ -60,12 +62,24 @@ export default Coffees
 const CoffeesWrap = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   margin-bottom: 120px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin-bottom: 144px;
+  }
 `
 
 const CoffeesContainer = styled.div`
   margin-bottom: 48px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+  }
 `
 const CoffeeCollection = styled.div`
   h1 {
@@ -73,13 +87,17 @@ const CoffeeCollection = styled.div`
       /* 180deg, */ var(--darkGreyBlue),
       var(--lightCreamBG)
     );
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
     background-clip: text;
     -moz-text-fill-color: transparent;
     margin-bottom: 26px;
+
+    @media ${({ theme }) => theme.breakpoint.tablet} {
+      font-size: 90px;
+      margin: 0 40px;
+    }
   }
 `
 
@@ -87,17 +105,39 @@ const CoffeeBags = styled.div`
   display: inline-flex;
   align-items: center;
   width: 200px;
-  height: 151px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 0 0 0 97px;
+  }
 `
 const Title = styled.h4`
   font-size: 24px;
   line-height: 32px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 30px 0 0;
+    width: 255px;
+  }
+`
+
+const DesContainer = styled.div`
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 282px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    align-items: left;
+    margin-left: 35px;
+  }
 `
 
 const Description = styled.p`
-  display: inline-flex;
-  align-items: center;
-  width: 282px;
   height: 50px;
-  margin: 0 24px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 0 35px 0 0;
+  }
 `

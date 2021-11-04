@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 import PlanButton from "../atoms/PlanButton"
 import styled from "styled-components"
-import { useSharedSummary } from "../../hooks/useSummary"
 import OrderModal from "./OrderModal"
 import Quotes from "../atoms/Quotes"
 

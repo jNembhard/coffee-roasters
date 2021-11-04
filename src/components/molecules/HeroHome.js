@@ -31,7 +31,7 @@ const HeroHome = () => {
     getImage(heroes[2].frontmatter.homeImg.childImageSharp.gatsbyImageData),
     [
       {
-        media: "(max-width: 768px)",
+        media: "(max-width: 765px)",
         image: getImage(
           heroes[0].frontmatter.homeImg.childImageSharp.gatsbyImageData
         ),
@@ -81,19 +81,23 @@ const HeroWrap = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 120px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    align-items: unset;
+  }
 `
 
 const ImageWrap = styled.div`
   position: relative;
   .art-directed {
-    width: 327px;
+    margin: 0 24px;
     height: 500px;
     border-radius: 8px;
     @media screen and (min-width: 767px) {
-      width: 689px;
+      margin: 0 39px;
 
       @media screen and (min-width: 992px) {
-        width: 1280px;
+        margin: 0 80px;
         height: 600px;
       }
     }
@@ -105,6 +109,11 @@ const HeroContainer = styled.div`
   position: absolute;
   background-color: transparent;
   width: 327px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    text-align: left;
+    margin-left: 97px;
+  }
 `
 
 const Title = styled.h1`
@@ -113,10 +122,23 @@ const Title = styled.h1`
   color: var(--lightCreamBG);
   background-color: transparent;
   margin: 100px 24px 24px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    font-size: 48px;
+    line-height: 48px;
+    margin: unset;
+    margin: 0 0 24px;
+  }
 `
 
 const Description = styled.p`
   color: var(--lightCreamBG);
   background-color: transparent;
   margin: 0 24px 39px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    font-size: 15px;
+    line-height: 25px;
+    margin: 0 0 39px;
+  }
 `

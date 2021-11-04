@@ -9,7 +9,7 @@ import leaflogo from "../../images/assets/shared/desktop/leaf-logo.svg"
 
 const navLinks = [
   { name: "home", url: "/" },
-  { name: "about", url: "/about" },
+  { name: "about us", url: "/about" },
   { name: "create your plan", url: "/plan" },
 ]
 
@@ -67,18 +67,31 @@ const FooterWrap = styled.footer`
   justify-content: center;
   text-align: center;
   margin: 120px 24px 72px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 144px 40px 72px;
+  }
 `
 
 const Container = styled.div`
   width: 327px;
   height: 346px;
   background-color: var(--darkGreyBlue);
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    width: 688px;
+    height: 270px;
+  }
 `
 
 const Title = styled.h3`
   font-size: 24px;
   background-color: transparent;
   margin: 54px 54px 50px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 50px 54px 32px;
+  }
 `
 
 const Links = styled(Link)`
@@ -98,6 +111,15 @@ const NavLinkUl = styled.ul`
   margin: 0 28px 48px;
   width: 192px;
   height: 93px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    width: unset;
+    height: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 32px 190px 65px 215px;
+  }
 `
 
 const List = styled.li`
@@ -106,6 +128,11 @@ const List = styled.li`
   line-height: 15px;
   letter-spacing: 0.92px;
   margin: 24px 0;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: unset;
+    margin-left: -30px;
+  }
 `
 
 const LinkList = styled(Link)`

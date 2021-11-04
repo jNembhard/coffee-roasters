@@ -32,4 +32,8 @@ const NavWrap = styled.header`
   align-items: center;
   justify-content: space-between;
   margin: 32px 24px 40px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 40px 40px 53px;
+  }
 `
