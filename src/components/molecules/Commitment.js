@@ -32,7 +32,7 @@ const Commitment = () => {
     ),
     [
       {
-        media: "(max-width: 768px)",
+        media: "(max-width: 765px)",
         image: getImage(
           commitments[0].frontmatter.commitImg.childImageSharp.gatsbyImageData
         ),
@@ -86,6 +86,10 @@ const CommitmentWrap = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    flex-direction: row;
+  }
 `
 const ImageContainer = styled.div`
   margin: 0 24px 48px;
@@ -98,6 +102,7 @@ const ImageContainer = styled.div`
     @media screen and (min-width: 767px) {
       width: 281px;
       height: 470px;
+      margin: 0 69px 0 40px;
 
       @media screen and (min-width: 992px) {
         width: 445px;
@@ -110,6 +115,13 @@ const ImageContainer = styled.div`
 const Container = styled.div`
   text-align: center;
   margin: 0 24px 120px;
+  max-width: 327px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    text-align: left;
+    margin: -50px 40px 0 0;
+    max-width: 339px;
+  }
 `
 
 const Title = styled.h1`
@@ -124,4 +136,9 @@ const Description = styled.p`
   color: var(--darkGreyBlue);
   width: 327px;
   height: 375px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    text-align: left;
+    width: 339px;
+  }
 `

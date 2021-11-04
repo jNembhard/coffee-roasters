@@ -32,7 +32,7 @@ const ProcessAtom = () => {
           key={step.id}
           style={{ borderTop: step.frontmatter.borderTop }}
         >
-          <Circles />
+          <Circles className="circles" />
           <Step>{`0${step.frontmatter.step}`}</Step>
           <Title>{step.frontmatter.title}</Title>
           <Description>{step.frontmatter.description}</Description>

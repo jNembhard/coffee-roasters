@@ -32,7 +32,7 @@ const AboutHero = () => {
     ),
     [
       {
-        media: "(max-width: 768px)",
+        media: "(max-width: 765px)",
         image: getImage(
           heroesAbout[0].frontmatter.homeImg.childImageSharp.gatsbyImageData
         ),
@@ -82,6 +82,11 @@ const AboutHeroWrap = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 120px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    align-items: unset;
+    margin-bottom: 144px;
+  }
 `
 
 const ImageContainer = styled.div`
@@ -110,6 +115,11 @@ const AboutHeroContainer = styled.div`
   background-color: transparent;
   text-align: center;
   margin: 111px 24px 87px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    text-align: left;
+    margin: 118px 233px 118px 56px;
+  }
 `
 
 const Title = styled.h1`
@@ -117,10 +127,20 @@ const Title = styled.h1`
   line-height: 28px;
   color: var(--lightCreamBG);
   background-color: transparent;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    font-size: 32px;
+    line-height: 40px;
+  }
 `
 
 const DesContainer = styled.p`
   max-width: 279px;
+  background-color: transparent;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    max-width: 398px;
+  }
 `
 const Description = styled.p`
   font-size: 15px;
@@ -128,4 +148,8 @@ const Description = styled.p`
   height: 150px;
   color: var(--lightCreamBG);
   background-color: transparent;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    height: 164px;
+  }
 `

@@ -31,7 +31,7 @@ const ProcessPlan = () => {
     getImage(planbgs[2].frontmatter.planImgBG.childImageSharp.gatsbyImageData),
     [
       {
-        media: "(max-width: 768px)",
+        media: "(max-width: 765px)",
         image: getImage(
           planbgs[0].frontmatter.planImgBG.childImageSharp.gatsbyImageData
         ),
@@ -104,6 +104,16 @@ const AtomContainer = styled.div`
   background-color: transparent;
   left: 24px;
   margin: -1080px 0;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    display: flex;
+    flex-direction: row;
+    margin: -550px 40px;
+
+    .circles {
+      background-color: transparent;
+    }
+  }
 
   h1 {
     margin-top: 80px;

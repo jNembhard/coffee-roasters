@@ -30,7 +30,7 @@ const PlanHero = () => {
     getImage(heroesPlan[2].frontmatter.homeImg.childImageSharp.gatsbyImageData),
     [
       {
-        media: "(max-width: 768px)",
+        media: "(max-width: 765px)",
         image: getImage(
           heroesPlan[0].frontmatter.homeImg.childImageSharp.gatsbyImageData
         ),
@@ -76,11 +76,20 @@ const PlanHeroWrap = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 120px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    align-items: unset;
+    margin-bottom: 144px;
+  }
 `
 
 const ImageContainer = styled.div`
   position: relative;
   margin: 0 24px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 0 40px;
+  }
 
   .art-directed {
     width: 327px;
@@ -104,6 +113,13 @@ const PlanHeroContainer = styled.div`
   background-color: transparent;
   text-align: center;
   margin: 111px 24px 87px;
+  max-width: 279px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    text-align: left;
+    margin: 127px 233px 126px 58px;
+    max-width: 398px;
+  }
 `
 
 const Title = styled.h1`
@@ -111,12 +127,20 @@ const Title = styled.h1`
   line-height: 40px;
   color: var(--lightCreamBG);
   background-color: transparent;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    font-size: 48px;
+    line-height: 48px;
+  }
 `
 const Description = styled.p`
   font-size: 15px;
   line-height: 25px;
-  width: 279px;
   height: 101px;
   color: var(--lightCreamBG);
   background-color: transparent;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    height: 147px;
+  }
 `

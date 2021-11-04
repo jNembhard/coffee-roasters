@@ -48,7 +48,7 @@ const Uncompromising = () => {
     getImage(grounds[5].frontmatter.commitImg.childImageSharp.gatsbyImageData),
     [
       {
-        media: "(max-width: 768px)",
+        media: "(max-width: 765px)",
         image: getImage(
           grounds[3].frontmatter.commitImg.childImageSharp.gatsbyImageData
         ),
@@ -85,7 +85,7 @@ const Uncompromising = () => {
             />
           </ForegroundImage>
           <Title>
-            Uncompromising <br />
+            Uncompromising <br className="break" />
             quality
           </Title>
           <Description>
@@ -118,6 +118,10 @@ const ForegroundImage = styled.div`
   background-color: transparent;
   margin-top: -200px;
 
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin-top: -260px;
+  }
+
   .fg-directed {
     width: 279px;
     height: 156px;
@@ -145,6 +149,7 @@ const BackgroundImage = styled.div`
     @media screen and (min-width: 767px) {
       width: 688px;
       height: 488px;
+      margin: 160px 40px 0;
 
       @media screen and (min-width: 992px) {
         width: 1280px;
@@ -159,6 +164,14 @@ const Container = styled.div`
   text-align: center;
   background-color: transparent;
   margin: 142px 24px 61px;
+  width: 279px;
+  height: 226px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 160px 74px 67px;
+    width: 540px;
+    height: 197px;
+  }
 `
 
 const Title = styled.h1`
@@ -166,12 +179,27 @@ const Title = styled.h1`
   line-height: 28px;
   color: var(--lightCreamBG);
   background-color: transparent;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+    width: 420px;
+    margin: 110px 64.5px 24px;
+
+    .break {
+      display: none;
+    }
+  }
 `
 const Description = styled.p`
   font-size: 15px;
   line-height: 25px;
-  width: 279px;
-  height: 226px;
   color: var(--lightCreamBG);
   background-color: transparent;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    width: unset;
+    height: unset;
+  }
 `
