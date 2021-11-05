@@ -84,6 +84,12 @@ const HeroWrap = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     align-items: unset;
+    margin-bottom: 144px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      align-items: center;
+      margin-bottom: 136px;
+    }
   }
 `
 
@@ -104,7 +110,7 @@ const ImageWrap = styled.div`
 
   .art-directed {
     height: 500px;
-    border-radius: 8px;
+    border-radius: 15px;
     @media screen and (min-width: 767px) {
       width: 689px;
 
@@ -125,6 +131,12 @@ const HeroContainer = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     text-align: left;
     margin-left: 97px;
+    width: 398px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      width: 493px;
+      margin: 117px 702px 116px 165px;
+    }
   }
 `
 
@@ -140,6 +152,11 @@ const Title = styled.h1`
     line-height: 48px;
     margin: unset;
     margin: 0 0 24px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      font-size: 72px;
+      line-height: 72px;
+    }
   }
 `
 
@@ -152,5 +169,10 @@ const Description = styled.p`
     font-size: 15px;
     line-height: 25px;
     margin: 0 0 39px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      font-size: 16px;
+      line-height: 26px;
+    }
   }
 `

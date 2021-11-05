@@ -35,5 +35,9 @@ const NavWrap = styled.header`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 40px 40px 53px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 43px 80px;
+    }
   }
 `

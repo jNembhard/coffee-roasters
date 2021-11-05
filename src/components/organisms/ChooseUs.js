@@ -32,6 +32,10 @@ const ChoiceWrap = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin-bottom: 434px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin-bottom: 234px;
+    }
   }
 `
 const Container = styled.div`
@@ -44,7 +48,11 @@ const Container = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 0 40px;
     height: 573px;
-    width: 688px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 0 80px;
+      width: 1280px;
+    }
   }
 `
 
@@ -54,6 +62,11 @@ const TitleChoice = styled.h1`
   font-size: 28px;
   line-height: 28px;
   margin-top: 64px;
+
+  media ${({ theme }) => theme.breakpoint.desktop} {
+    font-size: 40px;
+    line-height: 48px;
+  }
 `
 
 const DescriptionChoice = styled.p`
@@ -69,6 +82,10 @@ const DescriptionChoice = styled.p`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     max-width: 540px;
     margin: 0 100px 64px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 32px 370px 86px;
+    }
   }
 `
 const ContainerTwo = styled.div`
@@ -78,5 +95,9 @@ const ContainerTwo = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin-top: 555px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin-top: 400px;
+    }
   }
 `

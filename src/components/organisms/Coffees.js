@@ -34,24 +34,29 @@ const Coffees = () => {
     <CoffeesWrap>
       <CoffeeCollection>
         <h1>Our collection</h1>
-        {coffees.map(coffee => (
-          <CoffeesContainer key={coffee.id}>
-            <CoffeeBags>
-              <GatsbyImage
-                image={getImage(
-                  coffee.frontmatter.coffeeImg?.childImageSharp?.gatsbyImageData
-                )}
-                alt={coffee.frontmatter.coffee}
-              />
-            </CoffeeBags>
-            <DesContainer>
-              <Title>{coffee.frontmatter.coffee}</Title>
-              <Description
-                dangerouslySetInnerHTML={{ __html: sanitizeHtml(coffee.html) }}
-              />
-            </DesContainer>
-          </CoffeesContainer>
-        ))}
+        <CollectionContainer>
+          {coffees.map(coffee => (
+            <CoffeesContainer key={coffee.id}>
+              <CoffeeBags>
+                <GatsbyImage
+                  image={getImage(
+                    coffee.frontmatter.coffeeImg?.childImageSharp
+                      ?.gatsbyImageData
+                  )}
+                  alt={coffee.frontmatter.coffee}
+                />
+              </CoffeeBags>
+              <DesContainer>
+                <Title>{coffee.frontmatter.coffee}</Title>
+                <Description
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizeHtml(coffee.html),
+                  }}
+                />
+              </DesContainer>
+            </CoffeesContainer>
+          ))}
+        </CollectionContainer>
       </CoffeeCollection>
     </CoffeesWrap>
   )
@@ -69,18 +74,13 @@ const CoffeesWrap = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin-bottom: 144px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin-bottom: 200px;
+    }
   }
 `
 
-const CoffeesContainer = styled.div`
-  margin-bottom: 48px;
-
-  @media ${({ theme }) => theme.breakpoint.tablet} {
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-  }
-`
 const CoffeeCollection = styled.div`
   h1 {
     background-image: linear-gradient(
@@ -96,11 +96,44 @@ const CoffeeCollection = styled.div`
 
     @media ${({ theme }) => theme.breakpoint.tablet} {
       font-size: 90px;
-      margin: 0 40px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        font-size: 150px;
+      }
     }
   }
 `
 
+const CoffeesContainer = styled.div`
+  margin-bottom: 48px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0 30px;
+    }
+  }
+`
+
+const CollectionContainer = styled.div`
+  @media ${({ theme }) => theme.breakpoint.desktop} {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 1111px;
+    height: 399px;
+    background-color: transparent;
+  }
+`
 const CoffeeBags = styled.div`
   display: inline-flex;
   align-items: center;
@@ -108,6 +141,11 @@ const CoffeeBags = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 0 0 0 97px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      width: 255px;
+      margin: 0;
+    }
   }
 `
 const Title = styled.h4`
@@ -115,10 +153,12 @@ const Title = styled.h4`
   line-height: 32px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
-    display: inline-flex;
-    align-items: center;
     margin: 0 30px 0 0;
     width: 255px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 0;
+    }
   }
 `
 
@@ -131,6 +171,12 @@ const DesContainer = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     align-items: left;
     margin-left: 35px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      max-width: 255px;
+      margin-left: 0;
+      align-items: center;
+    }
   }
 `
 
@@ -139,5 +185,10 @@ const Description = styled.p`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 0 35px 0 0;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      height: 78px;
+      margin: unset;
+    }
   }
 `

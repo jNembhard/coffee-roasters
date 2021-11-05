@@ -28,10 +28,7 @@ const ProcessAtom = () => {
   return (
     <>
       {steps.map(step => (
-        <StepContainer
-          key={step.id}
-          style={{ borderTop: step.frontmatter.borderTop }}
-        >
+        <StepContainer key={step.id}>
           <Circles className="circles" />
           <Step>{`0${step.frontmatter.step}`}</Step>
           <Title>{step.frontmatter.title}</Title>
@@ -53,6 +50,10 @@ const Circles = styled.div`
     border-radius: 100%;
     z-index: 1;
     margin-top: -37px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin-top: -54px;
+    }
   }
 `
 
@@ -69,7 +70,12 @@ const StepContainer = styled.div`
     height: 371px;
     margin: 20px 0 56px;
     padding-top: 20px;
-    border-top: 2px solid var(--paleOrange);
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      width: 285px;
+      height: 355px;
+      margin: 82px 47.5px 64px;
+    }
   }
 `
 const Step = styled.h1`
@@ -83,6 +89,12 @@ const Title = styled.h2`
   line-height: 32px;
   color: var(--darkGreyBlue);
   background-color: transparent;
+
+  @media ${({ theme }) => theme.breakpoint.desktop} {
+    font-size: 32px;
+    line-height: 36px;
+    width: 255px;
+  }
 `
 const Description = styled.p`
   width: 327px;
@@ -95,5 +107,11 @@ const Description = styled.p`
     height: unset;
     margin-right: 10px;
     margin-left: 0;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      font-size: 16px;
+      line-height: 26px;
+      margin: unset;
+    }
   }
 `

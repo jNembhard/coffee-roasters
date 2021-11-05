@@ -60,14 +60,12 @@ const AboutHero = () => {
         </ImageContainer>
         <AboutHeroContainer>
           <Title>About Us</Title>
-          <DesContainer>
-            <Description>
-              Coffeeroasters began its journey of exotic discovery in 1999,
-              highlighting stories of coffee from around the world. We have
-              since been dedicated to bring the perfect cup - from bean to brew
-              - in every shipment.
-            </Description>
-          </DesContainer>
+          <Description>
+            Coffeeroasters began its journey of exotic discovery in 1999,
+            highlighting stories of coffee from around the world. We have since
+            been dedicated to bring the perfect cup - from bean to brew - in
+            every shipment.
+          </Description>
         </AboutHeroContainer>
       </AboutHeroWrap>
     </>
@@ -85,6 +83,7 @@ const AboutHeroWrap = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     align-items: unset;
+    flex-direction: unset;
     margin-bottom: 144px;
   }
 `
@@ -126,10 +125,12 @@ const AboutHeroContainer = styled.div`
   background-color: transparent;
   text-align: center;
   margin: 111px 24px 87px;
+  max-width: 279px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     text-align: left;
     margin: 118px 233px 118px 56px;
+    max-width: 398px;
   }
 `
 

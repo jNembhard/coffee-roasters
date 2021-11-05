@@ -70,6 +70,10 @@ const FooterWrap = styled.footer`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 144px 40px 72px;
+
+    @media ${({ theme }) => theme.breakpoint.tablet} {
+      margin: 168px 80px 88px;
+    }
   }
 `
 
@@ -81,6 +85,14 @@ const Container = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     width: 688px;
     height: 270px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      width: 1280px;
+      height: 120px;
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 `
 
@@ -91,6 +103,10 @@ const Title = styled.h3`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 50px 54px 32px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 43px 0 47px 50px;
+    }
   }
 `
 
@@ -119,6 +135,12 @@ const NavLinkUl = styled.ul`
     flex-direction: row;
     justify-content: space-between;
     margin: 32px 190px 65px 215px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      width: 293px;
+      height: 15px;
+      margin: 53.44px 373px 51px 0;
+    }
   }
 `
 
@@ -132,6 +154,10 @@ const List = styled.li`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: unset;
     margin-left: -30px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: unset;
+    }
   }
 `
 
@@ -155,6 +181,10 @@ const SocialContainer = styled.div`
   width: 120px;
   height: 24px;
   margin: 0 105px;
+
+  @media ${({ theme }) => theme.breakpoint.desktop} {
+    margin: 47px 85px 0 0;
+  }
 `
 const Socials = styled.img`
   background-color: transparent;
