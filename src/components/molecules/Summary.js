@@ -57,7 +57,9 @@ const Summary = () => {
             <Quotes />
           </OrderContainer>
         </ImageContainer>
-        <PlanButton onOpen={() => setShow(true)} />
+        <ButtonWrap>
+          <PlanButton className="plan-button" onOpen={() => setShow(true)} />
+        </ButtonWrap>
         <OrderModal onClose={() => setShow(false)} show={show} />
       </SummaryWrap>
     </>
@@ -76,11 +78,36 @@ const SummaryWrap = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 24px 40px 144px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 88px 60px 0 85px;
+    }
+  }
+`
+
+const ButtonWrap = styled.div`
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin-top: 40px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      text-align: right;
+      justify-content: flex-end;
+      margin: 40px 165px 0 650px;
+    }
   }
 `
 
 const ImageContainer = styled.div`
   margin: 0 0 56px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 0 40px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 0 165px 0 140px;
+    }
+  }
+
   .art-directed {
     position: relative;
     width: 328px;
@@ -90,10 +117,9 @@ const ImageContainer = styled.div`
     @media screen and (min-width: 767px) {
       width: 689px;
       height: 208px;
-      margin: 0 40px;
 
       @media screen and (min-width: 992px) {
-        margin: 0 80px;
+        width: 730px;
       }
     }
   }
@@ -106,6 +132,12 @@ const OrderContainer = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: -200px 73px 27px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: -200px 180px 0 90px;
+      width: 602px;
+      height: 114px;
+    }
   }
 
   .quotes {

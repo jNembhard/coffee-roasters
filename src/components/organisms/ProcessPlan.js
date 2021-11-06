@@ -57,6 +57,7 @@ const ProcessPlan = () => {
           />
         </ImageWrap>
         <AtomContainer>
+          <Line />
           <ProcessAtom />
         </AtomContainer>
       </ProcessContainer>
@@ -77,11 +78,29 @@ const Wrapper = styled.div`
 
 const ProcessContainer = styled.div``
 
+const Line = styled.hr`
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    position: absolute;
+    border: 0;
+    width: 445px;
+    height: 2px;
+    background: var(--paleOrange);
+    background-image: var(--paleOrange);
+    margin: 15px 246px 62px 18px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      width: 760px;
+      margin-top: 13px;
+      margin-left: 65px;
+    }
+  }
+`
+
 const ImageWrap = styled.div`
   position: relative;
 
   .art {
-    z-index: 1;
+    z-index: 0;
     width: 375px;
     height: 1068px;
     border-radius: 8px;
@@ -110,13 +129,27 @@ const AtomContainer = styled.div`
     flex-direction: row;
     margin: -550px 40px;
 
-    .circles {
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: -550px 150px 99px 85px;
+    }
+  }
+
+  .circles {
+    @media ${({ theme }) => theme.breakpoint.tablet} {
       background-color: transparent;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin-top: -105px;
+      }
     }
   }
 
   h1 {
     margin-top: 80px;
+
+    @media ${({ theme }) => theme.breakpoint.tablet} {
+      margin-top: unset;
+    }
   }
 
   h2 {

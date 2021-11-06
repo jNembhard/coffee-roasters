@@ -9,7 +9,7 @@ const Process = () => {
     <ProcessWrap>
       <ProcessContainer>
         <h3>How it works</h3>
-        <hr className="line" />
+        <Line />
         <AtomWrap>
           <ProcessAtom />
         </AtomWrap>
@@ -39,37 +39,39 @@ const ProcessWrap = styled.div`
       margin: 0 80px;
     }
   }
+`
 
-  .line {
-    @media ${({ theme }) => theme.breakpoint.tablet} {
+const Line = styled.hr`
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    border: 0;
+    width: 467px;
+    height: 2px;
+    background: var(--paleOrange);
+    background-image: var(--paleOrange);
+    margin-left: 20px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
       border: 0;
-      width: 497px;
+      width: 760px;
       height: 2px;
       background: var(--paleOrange);
       background-image: var(--paleOrange);
-
-      @media ${({ theme }) => theme.breakpoint.desktop} {
-        border: 0;
-        width: 760px;
-        height: 2px;
-        background: var(--paleOrange);
-        background-image: var(--paleOrange);
-        margin-left: 45px;
-      }
+      margin-left: 45px;
     }
   }
 `
+
 const AtomWrap = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     display: inline-flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     width: 689px;
     height: 422px;
 
     @media ${({ theme }) => theme.breakpoint.desktop} {
       height: 371px;
-      align-items: center;
-      justify-content: center;
       width: unset;
     }
   }
@@ -83,7 +85,7 @@ const ProcessContainer = styled.div`
     width: 689px;
     height: 622px;
 
-    @media ${({ theme }) => theme.breakpoint.tablet} {
+    @media ${({ theme }) => theme.breakpoint.desktop} {
       width: 1045px;
       height: 565px;
       margin-right: 120px;
@@ -97,6 +99,7 @@ const ProcessContainer = styled.div`
 
     @media ${({ theme }) => theme.breakpoint.tablet} {
       text-align: left;
+      margin-bottom: 40px;
 
       @media ${({ theme }) => theme.breakpoint.desktop} {
         margin: 0 790px 80px 40px;

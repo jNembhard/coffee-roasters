@@ -155,14 +155,6 @@ const Title = styled.h1`
   }
 `
 
-const DesContainer = styled.p`
-  max-width: 279px;
-  background-color: transparent;
-
-  @media ${({ theme }) => theme.breakpoint.tablet} {
-    max-width: 398px;
-  }
-`
 const Description = styled.p`
   font-size: 15px;
   line-height: 25px;

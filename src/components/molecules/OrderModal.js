@@ -111,6 +111,7 @@ const ModalContent = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     width: 540px;
     height: 597px;
+    margin: 214px 450px;
   }
 `
 

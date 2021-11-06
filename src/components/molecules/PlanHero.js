@@ -80,6 +80,10 @@ const PlanHeroWrap = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     align-items: unset;
     margin-bottom: 144px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin-bottom: 168px;
+    }
   }
 `
 
@@ -89,6 +93,10 @@ const ImageContainer = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 0 40px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 0 80px;
+    }
   }
 
   .art-directed {
@@ -119,6 +127,11 @@ const PlanHeroContainer = styled.div`
     text-align: left;
     margin: 127px 233px 126px 58px;
     max-width: 398px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 100px 709px 134px 85px;
+      max-width: 486px;
+    }
   }
 `
 
@@ -131,6 +144,12 @@ const Title = styled.h1`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     font-size: 48px;
     line-height: 48px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      font-size: 72px;
+      line-height: 72px;
+      width: 500px;
+    }
   }
 `
 const Description = styled.p`
@@ -142,5 +161,10 @@ const Description = styled.p`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     height: 147px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      font-size: 16px;
+      line-height: 26px;
+    }
   }
 `

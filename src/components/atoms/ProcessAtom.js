@@ -49,7 +49,7 @@ const Circles = styled.div`
     border: 2px solid var(--darkCyan);
     border-radius: 100%;
     z-index: 1;
-    margin-top: -37px;
+    margin-top: -43px;
 
     @media ${({ theme }) => theme.breakpoint.desktop} {
       margin-top: -54px;

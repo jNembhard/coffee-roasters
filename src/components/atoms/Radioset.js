@@ -100,6 +100,11 @@ const Label = styled.label`
     width: 223px;
     height: 250px;
     margin: 0 5px;
+
+    @media ${({ theme }) => theme.breakpoint.tablet} {
+      width: 228px;
+      margin: 0;
+    }
   }
 
   &:hover {

@@ -49,6 +49,11 @@ const AccordionWrap = styled.div`
   flex-direction: column;
   margin: 100px 0 98px;
 
+  @media ${({ theme }) => theme.breakpoint.desktop} {
+    width: 730px;
+    margin: 12px 0 0;
+  }
+
   .accordion__icon {
     margin-left: auto;
     transition: transform 0.6s ease;
@@ -82,6 +87,11 @@ const DropdownTitle = styled.h4`
     font-size: 32px;
     line-height: 48px;
     width: 503px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      font-size: 40px;
+      width: 630px;
+    }
   }
 `
 
@@ -91,6 +101,11 @@ const Container = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 40px 0 0;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      width: 760px;
+      magin-top: 56px;
+    }
   }
 `
 
@@ -110,5 +125,9 @@ const Arrow = styled.img`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 28px 0 0;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 60px -20px 0 0;
+    }
   }
 `
