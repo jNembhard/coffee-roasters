@@ -89,10 +89,22 @@ const CommitmentWrap = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     flex-direction: row;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 0 165px;
+    }
   }
 `
 const ImageContainer = styled.div`
   margin: 0 24px 48px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 0 69px 0 40px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 0 125px 0 0;
+    }
+  }
 
   .art-directed {
     width: 327px;
@@ -102,7 +114,6 @@ const ImageContainer = styled.div`
     @media screen and (min-width: 767px) {
       width: 281px;
       height: 470px;
-      margin: 0 69px 0 40px;
 
       @media screen and (min-width: 992px) {
         width: 445px;
@@ -121,6 +132,11 @@ const Container = styled.div`
     text-align: left;
     margin: -50px 40px 0 0;
     max-width: 339px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      max-width: 540px;
+      margin: 10px 40px 0 0;
+    }
   }
 `
 
@@ -128,17 +144,26 @@ const Title = styled.h1`
   font-size: 32px;
   line-height: 48px;
   color: var(--darkGreyBlue);
+
+  @media ${({ theme }) => theme.breakpoint.desktop} {
+    font-size: 40px;
+    line-height: 48px;
+  }
 `
 
 const Description = styled.p`
   font-size: 15px;
   line-height: 25px;
   color: var(--darkGreyBlue);
-  width: 327px;
   height: 375px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     text-align: left;
-    width: 339px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      height: unset;
+      font-size: 16px;
+      line-height: 26px;
+    }
   }
 `

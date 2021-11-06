@@ -85,6 +85,10 @@ const AboutHeroWrap = styled.div`
     align-items: unset;
     flex-direction: unset;
     margin-bottom: 144px;
+
+    @media ${({ theme }) => theme.breakpoint.tablet} {
+      margin-bottom: 168px;
+    }
   }
 `
 
@@ -131,6 +135,11 @@ const AboutHeroContainer = styled.div`
     text-align: left;
     margin: 118px 233px 118px 56px;
     max-width: 398px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 137px 750px 137px 85px;
+      max-width: 445px;
+    }
   }
 `
 

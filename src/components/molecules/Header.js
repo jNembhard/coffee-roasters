@@ -7,16 +7,18 @@ import BurgerNav from "../atoms/BurgerNav"
 
 const Header = () => (
   <NavWrap>
-    <Link
-      to="/"
-      style={{
-        textDecoration: `none`,
-      }}
-    >
-      <Logo src={logo} alt="Logo" />
-    </Link>
-    <Menu />
-    <BurgerNav />
+    <Container>
+      <Link
+        to="/"
+        style={{
+          textDecoration: `none`,
+        }}
+      >
+        <Logo src={logo} alt="Logo" />
+      </Link>
+      <Menu />
+      <BurgerNav />
+    </Container>
   </NavWrap>
 )
 
@@ -30,7 +32,7 @@ const Logo = styled.img`
 const NavWrap = styled.header`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 32px 24px 40px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
@@ -40,4 +42,11 @@ const NavWrap = styled.header`
       margin: 43px 80px;
     }
   }
+`
+
+const Container = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1280px;
 `

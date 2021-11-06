@@ -3,7 +3,7 @@ import BarlowRegular from "./fonts/Barlow/Barlow-Regular.ttf"
 import BarlowBold from "./fonts/Barlow/Barlow-Bold.ttf"
 import FrauncesBlack from "./fonts/Fraunces/Fraunces-Black.ttf"
 import { variables } from "./variables"
-// import styled from "styled-components"
+import styled from "styled-components"
 
 export const GlobalStyles = createGlobalStyle`
   ${variables}

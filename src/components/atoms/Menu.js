@@ -28,18 +28,16 @@ const MenuWrapUL = styled.ul`
   display: none;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
-    display: unset;
+    display: flex;
     list-style-type: none;
     text-transform: uppercase;
     font-size: 12px;
     line-height: 15px;
     letter-spacing: 0.92px;
-    display: flex;
 
     li {
       font-weight: var(--barlowBold);
-      margin-right: 16px;
-      margin-left: 16px;
+      margin: 0 16px;
     }
   }
 `

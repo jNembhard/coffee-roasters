@@ -111,6 +111,14 @@ const UncompromisingWrap = styled.div`
   justify-content: center;
   position: relative;
   margin: 90px 24px 120px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 144px 40px 144px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 168px 80px;
+    }
+  }
 `
 
 const ForegroundImage = styled.div`
@@ -120,6 +128,10 @@ const ForegroundImage = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin-top: -260px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: -198px 165px 88px 660px;
+    }
   }
 
   .fg-directed {
@@ -141,6 +153,14 @@ const ForegroundImage = styled.div`
 const BackgroundImage = styled.div`
   position: relative;
 
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 160px 40px 0;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 88px 80px 0;
+    }
+  }
+
   .bg-directed {
     width: 327px;
     height: 509px;
@@ -149,7 +169,6 @@ const BackgroundImage = styled.div`
     @media screen and (min-width: 767px) {
       width: 688px;
       height: 488px;
-      margin: 160px 40px 0;
 
       @media screen and (min-width: 992px) {
         width: 1280px;
@@ -171,6 +190,11 @@ const Container = styled.div`
     margin: 160px 74px 67px;
     width: 540px;
     height: 197px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      text-align: left;
+      margin: 88px 665px 88px 85px;
+    }
   }
 `
 
@@ -183,15 +207,24 @@ const Title = styled.h1`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     font-size: 32px;
     line-height: 48px;
-    text-align: center;
     width: 420px;
     margin: 110px 64.5px 24px;
 
-    .break {
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      width: 514px;
+      font-size: 40px;
+      line-height: 48px;
+      margin: 0;
+    }
+  }
+
+  .break {
+    @media ${({ theme }) => theme.breakpoint.tablet} {
       display: none;
     }
   }
 `
+
 const Description = styled.p`
   font-size: 15px;
   line-height: 25px;
@@ -201,5 +234,9 @@ const Description = styled.p`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     width: unset;
     height: unset;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      font-size: 16px;
+    }
   }
 `
