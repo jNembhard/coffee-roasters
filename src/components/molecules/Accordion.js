@@ -62,6 +62,12 @@ const AccordionWrap = styled.div`
   .rotate {
     transform: rotate(180deg);
   }
+
+  &.deactivate {
+    h4 {
+      opacity: 0.2;
+    }
+  }
 `
 
 const Button = styled.button`
@@ -122,6 +128,12 @@ const Content = styled.div`
 
 const Arrow = styled.img`
   margin: 42px 21px 22px 69px;
+  background-color: transparent;
+
+  &:hover {
+    filter: invert(94%) sepia(86%) saturate(639%) hue-rotate(121deg)
+      brightness(92%) contrast(77%);
+  }
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 28px 0 0;

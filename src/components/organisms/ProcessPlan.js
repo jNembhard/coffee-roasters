@@ -79,7 +79,9 @@ const Wrapper = styled.div`
 const ProcessContainer = styled.div``
 
 const Line = styled.hr`
+  display: none;
   @media ${({ theme }) => theme.breakpoint.tablet} {
+    display: unset;
     position: absolute;
     border: 0;
     width: 445px;

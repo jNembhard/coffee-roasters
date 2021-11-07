@@ -83,11 +83,9 @@ const HeroWrap = styled.div`
   margin-bottom: 120px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
-    align-items: unset;
     margin-bottom: 144px;
 
     @media ${({ theme }) => theme.breakpoint.desktop} {
-      align-items: center;
       margin-bottom: 136px;
     }
   }
@@ -103,8 +101,12 @@ const ImageWrap = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 0 40px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      margin: 0 80px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin: 0 60px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 0 80px;
+      }
     }
   }
 
@@ -115,26 +117,30 @@ const ImageWrap = styled.div`
       width: 689px;
 
       @media screen and (min-width: 992px) {
-        width: 1280px;
-        height: 600px;
+        width: 1150px;
+
+        @media screen and (min-width: 1440px) {
+          width: 1280px;
+          height: 600px;
+        }
       }
     }
   }
 `
 
 const HeroContainer = styled.div`
-  text-align: center;
   position: absolute;
   background-color: transparent;
-  width: 327px;
+  text-align: center;
+  max-width: 327px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     text-align: left;
-    margin-left: 97px;
-    width: 398px;
+    margin: 104px 233px 104px 58px;
+    max-width: 398px;
 
     @media ${({ theme }) => theme.breakpoint.desktop} {
-      width: 493px;
+      max-width: 493px;
       margin: 117px 702px 116px 165px;
     }
   }
@@ -150,7 +156,6 @@ const Title = styled.h1`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     font-size: 48px;
     line-height: 48px;
-    margin: unset;
     margin: 0 0 24px;
 
     @media ${({ theme }) => theme.breakpoint.desktop} {

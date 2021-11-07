@@ -13,6 +13,9 @@ const useSummary = () => {
   const [{ group1, group2, group3, group4, group5 }, setActive] =
     useState(initialState)
 
+  const [disable, setDisable] = useState(true)
+  const [accordion, setAccordion] = useState(false)
+
   const clearGroup = () => {
     setActive({ ...initialState })
   }
@@ -20,6 +23,22 @@ const useSummary = () => {
   const handleChange = e => {
     const { name, value } = e.target
     setActive(prevState => ({ ...prevState, [name]: value }))
+
+    if (group1 && group2 && group3 && group4 && group5 !== "") {
+      setDisable(false)
+    } else if (accordion !== false && group2 && group3 && group5 !== "") {
+      setDisable(false)
+    } else {
+      setDisable(true)
+    }
+  }
+
+  const blockAccordion = e => {
+    const { name } = e.target
+
+    name === "group4" && group1 === "Capsule"
+      ? setAccordion(true)
+      : setAccordion(false)
   }
 
   const shippingCost = () => {
@@ -45,11 +64,14 @@ const useSummary = () => {
   }
 
   return {
+    accordion,
+    disable,
     group1,
     group2,
     group3,
     group4,
     group5,
+    blockAccordion,
     handleChange,
     shippingCost,
   }

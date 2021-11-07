@@ -32,7 +32,7 @@ const AboutHero = () => {
     ),
     [
       {
-        media: "(max-width: 765px)",
+        media: "(max-width: 600px)",
         image: getImage(
           heroesAbout[0].frontmatter.homeImg.childImageSharp.gatsbyImageData
         ),
@@ -86,7 +86,7 @@ const AboutHeroWrap = styled.div`
     flex-direction: unset;
     margin-bottom: 144px;
 
-    @media ${({ theme }) => theme.breakpoint.tablet} {
+    @media ${({ theme }) => theme.breakpoint.desktop} {
       margin-bottom: 168px;
     }
   }
@@ -102,23 +102,29 @@ const ImageContainer = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 0 40px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      margin: 0 80px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin: 0 60px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 0 80px;
+      }
     }
   }
 
   .art-directed {
-    width: 327px;
     height: 400px;
     border-radius: 8px;
 
     @media screen and (min-width: 767px) {
       width: 689px;
-      height: 400px;
 
       @media screen and (min-width: 992px) {
-        width: 1280px;
-        height: 450px;
+        width: 1150px;
+
+        @media screen and (min-width: 1440px) {
+          width: 1280px;
+          height: 450px;
+        }
       }
     }
   }

@@ -5,8 +5,10 @@ import PlanButton from "../atoms/PlanButton"
 import styled from "styled-components"
 import OrderModal from "./OrderModal"
 import Quotes from "../atoms/Quotes"
+import { useSharedSummary } from "../../hooks/useSummary"
 
 const Summary = () => {
+  const { disable } = useSharedSummary()
   const [show, setShow] = useState(false)
 
   const data = useStaticQuery(graphql`
@@ -58,7 +60,7 @@ const Summary = () => {
           </OrderContainer>
         </ImageContainer>
         <ButtonWrap>
-          <PlanButton className="plan-button" onOpen={() => setShow(true)} />
+          <PlanButton disable={disable} onOpen={() => setShow(true)} />
         </ButtonWrap>
         <OrderModal onClose={() => setShow(false)} show={show} />
       </SummaryWrap>
@@ -75,6 +77,11 @@ const SummaryWrap = styled.div`
   justify-content: center;
   margin: 24px 23px 120px;
   transition: all 0.3s ease-in-out;
+
+  &.active {
+    background-color: var(--grey);
+    opacity: 0.7;
+  }
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 24px 40px 144px;

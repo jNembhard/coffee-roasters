@@ -2,10 +2,16 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-const PlanButton = ({ onOpen }) => {
+const PlanButton = ({ onOpen, disable }) => {
   return (
     <>
-      <Button onClick={onOpen}>Create your plan</Button>
+      <Button
+        onClick={onOpen}
+        disabled={disable}
+        className={disable === true ? "active" : ""}
+      >
+        Create your plan
+      </Button>
     </>
   )
 }
@@ -41,5 +47,10 @@ const Button = styled.button`
 
   &:hover {
     background-color: var(--cyan);
+  }
+
+  &.active {
+    background-color: var(--grey);
+    opacity: 0.3;
   }
 `
