@@ -17,7 +17,11 @@ const Options = () => {
         <Selection />
         <Container>
           {options.map(option => (
-            <Accordion key={option.id} dropdownTitle={option.title}>
+            <Accordion
+              key={option.id}
+              section={option.name}
+              dropdownTitle={option.title}
+            >
               {option.steps.map((step, index) => (
                 <Radioset
                   key={index}

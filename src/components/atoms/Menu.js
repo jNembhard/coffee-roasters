@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const navLinks = [
   { name: "home", url: "/" },
-  { name: "about", url: "/about" },
+  { name: "about us", url: "/about" },
   { name: "create your plan", url: "/plan" },
 ]
 

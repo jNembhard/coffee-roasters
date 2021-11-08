@@ -1,12 +1,13 @@
 import React, { useState } from "react"
+import scrollTo from "gatsby-plugin-smoothscroll"
 import styled from "styled-components"
 
 const selections = [
-  { id: 1, name: "Preferences" },
-  { id: 2, name: "Bean Type" },
-  { id: 3, name: "Quantity" },
-  { id: 4, name: "Grind Option" },
-  { id: 5, name: "Deliveries" },
+  { id: 1, name: "Preferences", section: "#drink" },
+  { id: 2, name: "Bean Type", section: "#type" },
+  { id: 3, name: "Quantity", section: "#quantity" },
+  { id: 4, name: "Grind Option", section: "#grind" },
+  { id: 5, name: "Deliveries", section: "#delivery" },
 ]
 
 const Selection = () => {
@@ -20,6 +21,7 @@ const Selection = () => {
             <li
               onClick={() => {
                 setActive(`${selection.name}`)
+                scrollTo(`${selection.section}`)
               }}
               className={active === `${selection.name}` ? "active" : ""}
             >
@@ -40,6 +42,7 @@ const SelectionWrap = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.desktop} {
     display: inherit;
+    position: sticky;
     width: 255px;
     height: 356px;
     margin: 115px 0 0 65px;

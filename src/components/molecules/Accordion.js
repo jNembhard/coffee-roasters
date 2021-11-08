@@ -2,8 +2,10 @@ import React, { useState, useRef } from "react"
 import styled from "styled-components"
 import arrow from "../../images/assets/plan/desktop/icon-arrow.svg"
 import PropTypes from "prop-types"
+import { useSharedSummary } from "../../hooks/useSummary"
 
-const Accordion = ({ children, dropdownTitle }) => {
+const Accordion = ({ children, dropdownTitle, section }) => {
+  const { accordion, blockAccordion, group1, group4 } = useSharedSummary()
   const [active, setActive] = useState("")
   const [height, setHeight] = useState("0px")
   const [rotate, setRotate] = useState("accordion__icon")
@@ -20,8 +22,12 @@ const Accordion = ({ children, dropdownTitle }) => {
 
   return (
     <>
-      <AccordionWrap>
-        <Button className={`${active}`} onClick={toggleAccordion}>
+      <AccordionWrap id={section}>
+        <Button
+          className={`${active}`}
+          disabled={accordion}
+          onClick={toggleAccordion}
+        >
           <DropdownTitle>{dropdownTitle}</DropdownTitle>
           <Arrow src={arrow} className={`${rotate}`} alt="" />
         </Button>
