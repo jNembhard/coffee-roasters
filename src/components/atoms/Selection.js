@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import styled from "styled-components"
+import { useSharedSummary } from "../../hooks/useSummary"
 
 const selections = [
   { id: 1, name: "Preferences", section: "#drink" },
@@ -12,6 +13,7 @@ const selections = [
 
 const Selection = () => {
   const [active, setActive] = useState("")
+  const { accordion } = useSharedSummary()
 
   return (
     <SelectionWrap>
@@ -23,7 +25,13 @@ const Selection = () => {
                 setActive(`${selection.name}`)
                 scrollTo(`${selection.section}`)
               }}
+              disabled={true}
               className={active === `${selection.name}` ? "active" : ""}
+              style={
+                accordion && selection.id === 4
+                  ? { color: "#83888f", opacity: 0.3 }
+                  : {}
+              }
             >
               {selection.name}
             </li>

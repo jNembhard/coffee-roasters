@@ -19,6 +19,7 @@ const Options = () => {
           {options.map(option => (
             <Accordion
               key={option.id}
+              buttonID={option.id}
               section={option.name}
               dropdownTitle={option.title}
             >

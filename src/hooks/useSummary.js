@@ -9,17 +9,6 @@ const initialState = {
   delivery: "",
 }
 
-const initialAccordion = {
-  selections: [
-    { id: 1, name: "drink" },
-    { id: 2, name: "type" },
-    { id: 3, name: "quantity" },
-    { id: 4, name: "grind" },
-    { id: 5, name: "delivery" },
-  ],
-  disabled: [],
-}
-
 const useSummary = () => {
   const [{ group1, group2, group3, group4, group5 }, setActive] =
     useState(initialState)
@@ -44,9 +33,8 @@ const useSummary = () => {
     }
   }
 
-  const blockAccordion = e => {
-    const { name, id, value } = e.target
-    name === "Capsules" ? setAccordion(true) : setAccordion(false)
+  const blockAccordion = () => {
+    group1 === "Capsules" ? setAccordion(true) : setAccordion(false)
   }
 
   const shippingCost = () => {

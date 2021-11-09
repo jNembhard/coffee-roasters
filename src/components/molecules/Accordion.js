@@ -1,11 +1,11 @@
-import React, { useState, useRef } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import styled from "styled-components"
 import arrow from "../../images/assets/plan/desktop/icon-arrow.svg"
 import PropTypes from "prop-types"
 import { useSharedSummary } from "../../hooks/useSummary"
 
-const Accordion = ({ children, dropdownTitle, section }) => {
-  const { accordion, blockAccordion, group1, group4 } = useSharedSummary()
+const Accordion = ({ children, dropdownTitle, section, buttonID }) => {
+  const { accordion, blockAccordion } = useSharedSummary()
   const [active, setActive] = useState("")
   const [height, setHeight] = useState("0px")
   const [rotate, setRotate] = useState("accordion__icon")
@@ -20,18 +20,38 @@ const Accordion = ({ children, dropdownTitle, section }) => {
     )
   }
 
+  useEffect(() => {
+    blockAccordion()
+    console.log(accordion)
+  })
+
   return (
     <>
       <AccordionWrap id={section}>
         <Button
           className={`${active}`}
-          disabled={accordion}
+          disabled={buttonID === 4 ? accordion : false}
           onClick={toggleAccordion}
         >
-          <DropdownTitle>{dropdownTitle}</DropdownTitle>
+          <DropdownTitle
+            style={
+              accordion && buttonID === 4
+                ? { color: "#83888f", opacity: 0.3 }
+                : {}
+            }
+          >
+            {dropdownTitle}
+          </DropdownTitle>
           <Arrow src={arrow} className={`${rotate}`} alt="" />
         </Button>
-        <Container ref={content} style={{ maxHeight: `${setHeight}` }}>
+        <Container
+          ref={content}
+          style={
+            accordion && buttonID === 4
+              ? { display: "none" }
+              : { maxHeight: `${setHeight}` }
+          }
+        >
           <Content>{active && children}</Content>
         </Container>
       </AccordionWrap>
@@ -71,7 +91,8 @@ const AccordionWrap = styled.div`
 
   &.deactivate {
     h4 {
-      opacity: 0.2;
+      color: red;
+      opacity: 0.4;
     }
   }
 `
