@@ -23,7 +23,7 @@ export default Qualities
 const QualitiesWrap = styled.div`
   background-color: transparent;
 
-  @media ${({ theme }) => theme.breakpoint.desktop} {
+  @media ${({ theme }) => theme.breakpoint.laptop} {
     display: flex;
   }
 `
@@ -38,13 +38,18 @@ const Container = styled.div`
     height: 180px;
     display: flex;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 350px;
-      height: 382px;
+      width: 300px;
+      height: 332px;
       margin: 0 15px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        width: 350px;
+        height: 382px;
+      }
     }
   }
 `
@@ -53,8 +58,16 @@ const Image = styled.img`
   background-color: transparent;
   margin: 68px 103px 56px;
 
-  @media ${({ theme }) => theme.breakpoint.desktop} {
+  @media ${({ theme }) => theme.breakpoint.laptop} {
+    width: 60px;
+    height: 60px;
     margin: unset;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      width: unset;
+      height: unset;
+      margin: unset;
+    }
   }
 `
 
@@ -71,7 +84,7 @@ const DesContainer = styled.div`
     height: 98px;
     margin: 41px 0 41px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       text-align: center;
     }
   }
@@ -86,7 +99,7 @@ const TitleQuality = styled.h1`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 0 89px 16px -41px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin: 0;
     }
   }
@@ -107,7 +120,7 @@ const DescriptionQuality = styled.p`
     max-width: 344px;
     height: 50px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin: 24px 48px 48px;
     }
   }

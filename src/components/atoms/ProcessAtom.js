@@ -51,8 +51,12 @@ const Circles = styled.div`
     z-index: 1;
     margin-top: -43px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      margin-top: -54px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin-top: -80px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin-top: -54px;
+      }
     }
   }
 `
@@ -71,10 +75,16 @@ const StepContainer = styled.div`
     margin: 20px 0 56px;
     padding-top: 20px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      width: 285px;
-      height: 355px;
-      margin: 82px 47.5px 64px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      width: 230px;
+      height: 300px;
+      margin: 82px 38px 64px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        width: 285px;
+        height: 355px;
+        margin: 82px 47.5px 64px;
+      }
     }
   }
 `
@@ -90,7 +100,7 @@ const Title = styled.h2`
   color: var(--darkGreyBlue);
   background-color: transparent;
 
-  @media ${({ theme }) => theme.breakpoint.desktop} {
+  @media ${({ theme }) => theme.breakpoint.laptop} {
     font-size: 32px;
     line-height: 36px;
     width: 255px;
@@ -108,7 +118,7 @@ const Description = styled.p`
     margin-right: 10px;
     margin-left: 0;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       font-size: 16px;
       line-height: 26px;
       margin: unset;

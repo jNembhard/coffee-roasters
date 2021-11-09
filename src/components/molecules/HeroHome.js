@@ -37,7 +37,7 @@ const HeroHome = () => {
         ),
       },
       {
-        media: "(max-width: 992px)",
+        media: "(max-width: 1199px)",
         image: getImage(
           heroes[1].frontmatter.homeImg.childImageSharp.gatsbyImageData
         ),
@@ -85,7 +85,7 @@ const HeroWrap = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin-bottom: 144px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin-bottom: 136px;
     }
   }
@@ -116,8 +116,8 @@ const ImageWrap = styled.div`
     @media screen and (min-width: 767px) {
       width: 689px;
 
-      @media screen and (min-width: 992px) {
-        width: 1150px;
+      @media screen and (min-width: 1200px) {
+        width: 1140px;
 
         @media screen and (min-width: 1440px) {
           width: 1280px;
@@ -139,9 +139,13 @@ const HeroContainer = styled.div`
     margin: 104px 233px 104px 58px;
     max-width: 398px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       max-width: 493px;
-      margin: 117px 702px 116px 165px;
+      margin: 117px 500px 116px 80px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 117px 702px 116px 165px;
+      }
     }
   }
 `
@@ -158,7 +162,7 @@ const Title = styled.h1`
     line-height: 48px;
     margin: 0 0 24px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       font-size: 72px;
       line-height: 72px;
     }
@@ -175,7 +179,7 @@ const Description = styled.p`
     line-height: 25px;
     margin: 0 0 39px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       font-size: 16px;
       line-height: 26px;
     }

@@ -75,7 +75,7 @@ const CoffeesWrap = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin-bottom: 144px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin-bottom: 200px;
     }
   }
@@ -97,8 +97,12 @@ const CoffeeCollection = styled.div`
     @media ${({ theme }) => theme.breakpoint.tablet} {
       font-size: 90px;
 
-      @media ${({ theme }) => theme.breakpoint.desktop} {
-        font-size: 150px;
+      @media ${({ theme }) => theme.breakpoint.laptop} {
+        font-size: 140px;
+
+        @media ${({ theme }) => theme.breakpoint.desktop} {
+          font-size: 150px;
+        }
       }
     }
   }
@@ -113,18 +117,22 @@ const CoffeesContainer = styled.div`
     flex-direction: row;
     align-items: left;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin: 0 30px;
+      margin: 0 12px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 0 30px;
+      }
     }
   }
 `
 
 const CollectionContainer = styled.div`
-  @media ${({ theme }) => theme.breakpoint.desktop} {
+  @media ${({ theme }) => theme.breakpoint.laptop} {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -142,7 +150,7 @@ const CoffeeBags = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 0 0 0 97px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       width: 255px;
       margin: 0;
     }
@@ -156,7 +164,7 @@ const Title = styled.h4`
     margin: 0 30px 0 0;
     width: 255px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin: 0;
     }
   }
@@ -172,7 +180,7 @@ const DesContainer = styled.div`
     align-items: left;
     margin-left: 35px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       max-width: 255px;
       margin-left: 0;
       align-items: center;
@@ -186,7 +194,7 @@ const Description = styled.p`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 0 35px 0 0;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       height: 78px;
       margin: unset;
     }

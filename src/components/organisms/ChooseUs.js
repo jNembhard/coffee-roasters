@@ -33,7 +33,7 @@ const ChoiceWrap = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin-bottom: 434px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin-bottom: 234px;
     }
   }
@@ -49,9 +49,15 @@ const Container = styled.div`
     margin: 0 40px;
     height: 573px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin: 0 80px;
-      width: 1280px;
+      width: 1140px;
+      height: 500px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        height: 573px;
+        width: 1280px;
+      }
     }
   }
 `
@@ -63,7 +69,7 @@ const TitleChoice = styled.h1`
   line-height: 28px;
   margin-top: 64px;
 
-  media ${({ theme }) => theme.breakpoint.desktop} {
+  media ${({ theme }) => theme.breakpoint.laptop} {
     font-size: 40px;
     line-height: 48px;
   }
@@ -83,8 +89,12 @@ const DescriptionChoice = styled.p`
     max-width: 540px;
     margin: 0 100px 64px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      margin: 32px 370px 86px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin: 32px 320px 86px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 32px 370px 86px;
+      }
     }
   }
 `
@@ -96,7 +106,7 @@ const ContainerTwo = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin-top: 555px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin-top: 400px;
     }
   }

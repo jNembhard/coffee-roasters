@@ -34,7 +34,7 @@ const ProcessWrap = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 0 44px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       align-items: left;
       margin: 0 80px;
     }
@@ -50,13 +50,15 @@ const Line = styled.hr`
     background-image: var(--paleOrange);
     margin-left: 20px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       border: 0;
-      width: 760px;
-      height: 2px;
-      background: var(--paleOrange);
-      background-image: var(--paleOrange);
+      width: 640px;
       margin-left: 45px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        width: 760px;
+        margin-left: 45px;
+      }
     }
   }
 `
@@ -70,7 +72,7 @@ const AtomWrap = styled.div`
     width: 689px;
     height: 422px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       height: 371px;
       width: unset;
     }
@@ -85,10 +87,16 @@ const ProcessContainer = styled.div`
     width: 689px;
     height: 622px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      width: 1045px;
-      height: 565px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      width: 900px;
+      height: 500px;
       margin-right: 120px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        width: 1045px;
+        height: 565px;
+        margin-right: 120px;
+      }
     }
   }
 
@@ -101,7 +109,7 @@ const ProcessContainer = styled.div`
       text-align: left;
       margin-bottom: 40px;
 
-      @media ${({ theme }) => theme.breakpoint.desktop} {
+      @media ${({ theme }) => theme.breakpoint.laptop} {
         margin: 0 790px 80px 40px;
         width: 255px;
       }
@@ -118,8 +126,12 @@ const ButtonWrap = styled.div`
     text-align: left;
     margin: 60px 472px 0 0;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      margin: 104px 472px 0 45px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin: 160px 472px 0 40px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 104px 472px 0 45px;
+      }
     }
   }
 `
