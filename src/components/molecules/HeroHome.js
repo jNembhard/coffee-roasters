@@ -113,6 +113,7 @@ const ImageWrap = styled.div`
 
   .hero-directed {
     height: 500px;
+    border-radius: 15px;
 
     @media ${({ theme }) => theme.breakpoint.tablet} {
       width: 689px;

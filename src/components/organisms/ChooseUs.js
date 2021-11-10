@@ -102,13 +102,14 @@ const DescriptionChoice = styled.p`
 const ContainerTwo = styled.div`
   background-color: transparent;
   position: absolute;
-  margin-top: 880px;
+  top: 305px;
+  align-items: center;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
-    margin-top: 555px;
+    top: 240px;
 
     @media ${({ theme }) => theme.breakpoint.laptop} {
-      margin-top: 400px;
+      top: 300px;
     }
   }
 `
