@@ -12,7 +12,7 @@ const Options = () => {
   }
 
   return (
-    <>
+    <OptionsWrap>
       <OptionsForm onSubmit={handleSubmit}>
         <Selection />
         <Container>
@@ -37,26 +37,34 @@ const Options = () => {
           <Summary />
         </Container>
       </OptionsForm>
-    </>
+    </OptionsWrap>
   )
 }
 
 export default Options
 
+const OptionsWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+`
+
 const OptionsForm = styled.form`
+  display: inline-flex;
+
   @media ${({ theme }) => theme.breakpoint.laptop} {
-    display: flex;
+    display: inline-flex;
   }
 `
 
 const Container = styled.div`
   @media ${({ theme }) => theme.breakpoint.laptop} {
     width: 740px;
-    margin: 88px 100px 88px 100px;
+    margin: 88px 100px 0;
 
     @media ${({ theme }) => theme.breakpoint.desktop} {
-      width: 740px;
-      margin: 88px 125px 88px 165px;
+      margin: 88px 125px 0 165px;
     }
   }
 `

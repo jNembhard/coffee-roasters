@@ -4,6 +4,18 @@ import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Quotes from "../atoms/Quotes"
 import { useSharedSummary } from "../../hooks/useSummary"
+import { motion } from "framer-motion"
+import Backdrop from "../atoms/Backdrop"
+
+const dropIn = {
+  hidden: { y: "-100vh", opacity: 0 },
+  visible: {
+    y: "0",
+    opacity: 1,
+    transition: { duration: 0.1, type: "spring", damping: 25, stiffness: 500 },
+  },
+  exit: { y: "100vh", opacity: 0 },
+}
 
 const OrderModal = ({ onClose, show }) => {
   const { shippingCost } = useSharedSummary()
@@ -45,8 +57,14 @@ const OrderModal = ({ onClose, show }) => {
   if (!show) return null
 
   return (
-    <ModalWrap onClick={onClose}>
-      <ModalContent onClick={e => e.stopPropagation()}>
+    <Backdrop onClick={onClose}>
+      <ModalContent
+        onClick={e => e.stopPropagation()}
+        initial="hidden"
+        animate="visible"
+        variants={dropIn}
+        exit="exit"
+      >
         <ModalHeader>
           <GatsbyImage
             image={images}
@@ -71,35 +89,13 @@ const OrderModal = ({ onClose, show }) => {
           </CheckoutButton>
         </CheckoutContainer>
       </ModalContent>
-    </ModalWrap>
+    </Backdrop>
   )
 }
 
 export default OrderModal
 
-const ModalWrap = styled.div`
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-
-  .quotes {
-    color: var(--grey);
-    margin: 40px 24px 0;
-
-    @media ${({ theme }) => theme.breakpoint.tablet} {
-      margin: 57px 56px 7px;
-    }
-  }
-`
-const ModalContent = styled.div`
+const ModalContent = styled(motion.div)`
   width: 327px;
   height: 597px;
   margin: 0 35px;
@@ -138,6 +134,7 @@ const Title = styled.h2`
     margin: -88px 150px 40px 56px;
     font-size: 40px;
     line-height: 48px;
+    width: 380px;
   }
 `
 

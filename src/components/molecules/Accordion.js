@@ -3,18 +3,17 @@ import styled from "styled-components"
 import arrow from "../../images/assets/plan/desktop/icon-arrow.svg"
 import PropTypes from "prop-types"
 import { useSharedSummary } from "../../hooks/useSummary"
+import { motion, AnimatePresence } from "framer-motion"
 
 const Accordion = ({ children, dropdownTitle, section, buttonID }) => {
   const { accordion, blockAccordion } = useSharedSummary()
   const [active, setActive] = useState("")
-  const [height, setHeight] = useState("0px")
   const [rotate, setRotate] = useState("accordion__icon")
 
   const content = useRef(null)
 
   const toggleAccordion = () => {
     setActive(active === "" ? "active" : "")
-    setHeight(active === "active" ? "0px" : `${content.current.scrollHeight}px`)
     setRotate(
       active === "active" ? "accordion__icon" : "accordion__icon rotate"
     )
@@ -41,18 +40,27 @@ const Accordion = ({ children, dropdownTitle, section, buttonID }) => {
           >
             {dropdownTitle}
           </DropdownTitle>
-          <Arrow src={arrow} className={`${rotate}`} alt="" />
+          <ArrowContainer>
+            <Arrow src={arrow} className={`${rotate}`} alt="" />
+          </ArrowContainer>
         </Button>
-        <Container
-          ref={content}
-          style={
-            accordion && buttonID === 4
-              ? { display: "none" }
-              : { maxHeight: `${setHeight}` }
-          }
-        >
-          <Content>{active && children}</Content>
-        </Container>
+        <AnimatePresence initial={false}>
+          {active && (
+            <Container
+              initial="collapsed"
+              animate="open"
+              exit="collapsed"
+              variants={{
+                open: { opacity: 1, height: "auto" },
+                collapsed: { opacity: 0, height: 0 },
+              }}
+              transition={{ duration: 0.6, ease: [0.04, 0.62, 0.23, 0.98] }}
+              style={accordion && buttonID === 4 ? { display: "none" } : {}}
+            >
+              <Content>{active && children}</Content>
+            </Container>
+          )}
+        </AnimatePresence>
       </AccordionWrap>
     </>
   )
@@ -74,30 +82,26 @@ const AccordionWrap = styled.div`
   flex-direction: column;
   margin: 100px 0 98px;
 
-  @media ${({ theme }) => theme.breakpoint.laptop} {
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 100px 40px 98px;
     width: 730px;
-    margin: 12px 0 0;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      width: 730px;
-      margin: 12px 0 0;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin: 60px 0 88px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 12px 0 88px;
+      }
     }
   }
 
   .accordion__icon {
     margin-left: auto;
-    transition: transform 0.6s ease;
+    transition: transform 0.4s ease;
   }
 
   .rotate {
     transform: rotate(180deg);
-  }
-
-  &.deactivate {
-    h4 {
-      color: red;
-      opacity: 0.4;
-    }
   }
 `
 
@@ -107,9 +111,9 @@ const Button = styled.button`
   justify-content: center;
   cursor: pointer;
   padding: 0 24px;
-  display: flex;
   border: none;
   outline: none;
+  text-align: left;
 `
 
 const DropdownTitle = styled.h4`
@@ -124,20 +128,24 @@ const DropdownTitle = styled.h4`
     font-size: 32px;
     line-height: 48px;
     width: 503px;
+    margin: 0 24px;
 
     @media ${({ theme }) => theme.breakpoint.laptop} {
       font-size: 35px;
-      width: 600px;
+      width: 670px;
+      margin-left: -10px;
 
       @media ${({ theme }) => theme.breakpoint.desktop} {
         font-size: 40px;
-        width: 630px;
+        width: 680px;
+        margin-left: unset;
+        margin-right: 25px;
       }
     }
   }
 `
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   overflow: hidden;
   transition: max-height 0.6s ease;
 
@@ -167,24 +175,30 @@ const Content = styled.div`
   }
 `
 
-const Arrow = styled.img`
+const ArrowContainer = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin: 42px 21px 22px 69px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    /* margin: 28px 0 0; */
+
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin: 10px 15px 0 40px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 10px -40px 0 10px;
+      }
+    }
+  }
+`
+
+const Arrow = styled.img`
   background-color: transparent;
 
   &:hover {
     filter: invert(94%) sepia(86%) saturate(639%) hue-rotate(121deg)
       brightness(92%) contrast(77%);
-  }
-
-  @media ${({ theme }) => theme.breakpoint.tablet} {
-    margin: 28px 0 0;
-
-    @media ${({ theme }) => theme.breakpoint.laptop} {
-      margin: 60px 30px 0 0;
-
-      @media ${({ theme }) => theme.breakpoint.desktop} {
-        margin: 60px -20px 0 0;
-      }
-    }
   }
 `

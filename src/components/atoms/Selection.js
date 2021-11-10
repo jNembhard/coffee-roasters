@@ -45,7 +45,7 @@ const Selection = () => {
 
 export default Selection
 
-const SelectionWrap = styled.div`
+const SelectionWrap = styled.aside`
   display: none;
 
   @media ${({ theme }) => theme.breakpoint.laptop} {

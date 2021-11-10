@@ -6,6 +6,7 @@ import styled from "styled-components"
 import OrderModal from "./OrderModal"
 import Quotes from "../atoms/Quotes"
 import { useSharedSummary } from "../../hooks/useSummary"
+import { AnimatePresence } from "framer-motion"
 
 const Summary = () => {
   const { disable } = useSharedSummary()
@@ -62,7 +63,13 @@ const Summary = () => {
         <ButtonWrap>
           <PlanButton disable={disable} onOpen={() => setShow(true)} />
         </ButtonWrap>
-        <OrderModal onClose={() => setShow(false)} show={show} />
+        <AnimatePresence
+          initial={false}
+          exitBeforeEnter={true}
+          onExitComplete={() => null}
+        >
+          {show && <OrderModal onClose={() => setShow(false)} show={show} />}
+        </AnimatePresence>
       </SummaryWrap>
     </>
   )

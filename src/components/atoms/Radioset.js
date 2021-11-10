@@ -108,14 +108,14 @@ const Label = styled.label`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     width: 223px;
     height: 250px;
-    margin: 0 5px;
+    margin: 0;
 
     @media ${({ theme }) => theme.breakpoint.laptop} {
       width: 210px;
-      margin: 0;
 
       @media ${({ theme }) => theme.breakpoint.desktop} {
         width: 228px;
+        margin: 0 2px;
       }
     }
   }
