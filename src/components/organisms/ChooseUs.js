@@ -29,6 +29,7 @@ const ChoiceWrap = styled.div`
   justify-content: center;
   text-align: center;
   margin-bottom: 680px;
+  position: relative;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin-bottom: 434px;

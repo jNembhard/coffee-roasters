@@ -52,7 +52,7 @@ const HeroHome = () => {
           <GatsbyImage
             image={images}
             loading="eager"
-            className="art-directed"
+            className="hero-directed"
             formats={["auto", "webp", "avif"]}
             alt="coffeepress"
           />
@@ -97,6 +97,7 @@ const ImageWrap = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-radius: 15px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 0 40px;
@@ -110,16 +111,16 @@ const ImageWrap = styled.div`
     }
   }
 
-  .art-directed {
+  .hero-directed {
     height: 500px;
-    border-radius: 15px;
-    @media screen and (min-width: 767px) {
+
+    @media ${({ theme }) => theme.breakpoint.tablet} {
       width: 689px;
 
-      @media screen and (min-width: 1200px) {
+      @media ${({ theme }) => theme.breakpoint.laptop} {
         width: 1140px;
 
-        @media screen and (min-width: 1440px) {
+        @media ${({ theme }) => theme.breakpoint.desktop} {
           width: 1280px;
           height: 600px;
         }
