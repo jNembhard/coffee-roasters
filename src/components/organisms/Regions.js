@@ -52,11 +52,11 @@ const RegionWrap = styled.div`
 const Image = styled.img`
   margin-bottom: 38px;
 
-  @media ${({ theme }) => theme.breakpoint.desktop} {
-    margin-bottom: 48px;
+  @media ${({ theme }) => theme.breakpoint.laptop} {
+    margin-bottom: 46px;
 
     @media ${({ theme }) => theme.breakpoint.desktop} {
-      margin-bottom: 46px;
+      margin-bottom: 48px;
     }
   }
 `
@@ -71,11 +71,16 @@ const Title = styled.h3`
     margin: 0 473px 72px 0;
     width: 255px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       font-size: 32px;
       line-height: 36px;
-      margin: 0 790px 72px 0;
+      margin: 0 660px 72px 0;
       width: 300px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 0 790px 72px 0;
+        width: 300px;
+      }
     }
   }
 `
@@ -89,9 +94,14 @@ const Container = styled.div`
     margin-top: unset;
     width: 223px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       width: 272px;
-      margin: 0 95px 0 0;
+      margin: 0 35px 0 45px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        width: 272px;
+        margin: 0 95px 0 0;
+      }
     }
   }
 `
@@ -104,7 +114,7 @@ const RegionName = styled.h1`
     font-size: 24px;
     magin-bottom: 21px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       font-size: 32px;
       line-height: 36px;
       margin-bottom: 24px;
@@ -120,7 +130,7 @@ const RegionContainer = styled.div`
     width: 688px;
     height: 262px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       width: 1045px;
       height: 262px;
     }

@@ -44,14 +44,19 @@ const Options = () => {
 export default Options
 
 const OptionsForm = styled.form`
-  @media ${({ theme }) => theme.breakpoint.desktop} {
+  @media ${({ theme }) => theme.breakpoint.laptop} {
     display: flex;
   }
 `
 
 const Container = styled.div`
-  @media ${({ theme }) => theme.breakpoint.desktop} {
+  @media ${({ theme }) => theme.breakpoint.laptop} {
     width: 740px;
-    margin: 88px 125px 88px 165px;
+    margin: 88px 100px 88px 100px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      width: 740px;
+      margin: 88px 125px 88px 165px;
+    }
   }
 `

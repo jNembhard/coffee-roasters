@@ -36,7 +36,7 @@ const PlanHero = () => {
         ),
       },
       {
-        media: "(max-width: 992px)",
+        media: "(max-width: 1199px)",
         image: getImage(
           heroesPlan[1].frontmatter.homeImg.childImageSharp.gatsbyImageData
         ),
@@ -81,7 +81,7 @@ const PlanHeroWrap = styled.div`
     align-items: unset;
     margin-bottom: 144px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin-bottom: 168px;
     }
   }
@@ -110,8 +110,8 @@ const ImageContainer = styled.div`
     @media screen and (min-width: 767px) {
       width: 689px;
 
-      @media screen and (min-width: 992px) {
-        width: 1150px;
+      @media screen and (min-width: 1200px) {
+        width: 1140px;
 
         @media screen and (min-width: 1440px) {
           width: 1280px;
@@ -134,9 +134,14 @@ const PlanHeroContainer = styled.div`
     margin: 127px 233px 126px 58px;
     max-width: 398px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      margin: 100px 709px 134px 85px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin: 80px 680px 134px 160px;
       max-width: 486px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 100px 709px 134px 85px;
+        max-width: 486px;
+      }
     }
   }
 `
@@ -151,10 +156,15 @@ const Title = styled.h1`
     font-size: 48px;
     line-height: 48px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      font-size: 72px;
-      line-height: 72px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      font-size: 62px;
+      line-height: 62px;
       width: 500px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        font-size: 72px;
+        line-height: 72px;
+      }
     }
   }
 `
@@ -168,7 +178,7 @@ const Description = styled.p`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     height: 147px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       font-size: 16px;
       line-height: 26px;
     }

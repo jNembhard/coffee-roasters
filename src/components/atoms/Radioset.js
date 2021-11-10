@@ -52,6 +52,15 @@ const FieldWrap = styled.fieldset`
     flex-direction: unset;
     width: 223px;
     height: 250px;
+
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      width: 223px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        width: 400px;
+        height: 250px;
+      }
+    }
   }
 
   input[type="radio"] {
@@ -101,9 +110,13 @@ const Label = styled.label`
     height: 250px;
     margin: 0 5px;
 
-    @media ${({ theme }) => theme.breakpoint.tablet} {
-      width: 228px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      width: 210px;
       margin: 0;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        width: 228px;
+      }
     }
   }
 

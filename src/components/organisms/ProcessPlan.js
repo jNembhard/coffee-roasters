@@ -37,7 +37,7 @@ const ProcessPlan = () => {
         ),
       },
       {
-        media: "(max-width: 992px)",
+        media: "(max-width: 1199px)",
         image: getImage(
           planbgs[1].frontmatter.planImgBG.childImageSharp.gatsbyImageData
         ),
@@ -76,24 +76,33 @@ const Wrapper = styled.div`
   background-color: transparent;
 `
 
-const ProcessContainer = styled.div``
+const ProcessContainer = styled.div`
+  position: relative;
+`
 
 const Line = styled.hr`
   display: none;
+
   @media ${({ theme }) => theme.breakpoint.tablet} {
     display: unset;
     position: absolute;
     border: 0;
-    width: 445px;
+    width: 425px;
     height: 2px;
     background: var(--paleOrange);
     background-image: var(--paleOrange);
-    margin: 15px 246px 62px 18px;
+    margin: -13px 246px 62px 18px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      width: 760px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      width: 605px;
       margin-top: 13px;
-      margin-left: 65px;
+      margin-left: 59px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        width: 700px;
+        margin-top: 13px;
+        margin-left: 65px;
+      }
     }
   }
 `
@@ -111,9 +120,13 @@ const ImageWrap = styled.div`
       width: 768px;
       height: 640px;
 
-      @media screen and (min-width: 992px) {
-        width: 1280px;
+      @media screen and (min-width: 1200px) {
+        width: 1140px;
         height: 653px;
+
+        @media screen and (min-width: 1440px) {
+          width: 1280px;
+        }
       }
     }
   }
@@ -124,6 +137,7 @@ const AtomContainer = styled.div`
   z-index: 2;
   background-color: transparent;
   left: 24px;
+  right: 24px;
   margin: -1080px 0;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
@@ -131,7 +145,7 @@ const AtomContainer = styled.div`
     flex-direction: row;
     margin: -550px 40px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin: -550px 150px 99px 85px;
     }
   }
@@ -139,8 +153,9 @@ const AtomContainer = styled.div`
   .circles {
     @media ${({ theme }) => theme.breakpoint.tablet} {
       background-color: transparent;
+      margin-top: -70px;
 
-      @media ${({ theme }) => theme.breakpoint.desktop} {
+      @media ${({ theme }) => theme.breakpoint.laptop} {
         margin-top: -105px;
       }
     }

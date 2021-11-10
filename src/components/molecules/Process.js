@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 
 const Process = () => {
   return (
-    <ProcessWrap>
+    <ProcessWrap className="test">
       <ProcessContainer>
         <h3>How it works</h3>
         <Line />
@@ -42,11 +42,13 @@ const ProcessWrap = styled.div`
 `
 
 const Line = styled.hr`
+  display: none;
   @media ${({ theme }) => theme.breakpoint.tablet} {
+    display: inherit;
     border: 0;
     width: 467px;
     height: 2px;
-    background: var(--paleOrange);
+    background-color: var(--paleOrange);
     background-image: var(--paleOrange);
     margin-left: 20px;
 

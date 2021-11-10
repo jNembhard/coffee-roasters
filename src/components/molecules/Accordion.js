@@ -22,7 +22,6 @@ const Accordion = ({ children, dropdownTitle, section, buttonID }) => {
 
   useEffect(() => {
     blockAccordion()
-    console.log(accordion)
   })
 
   return (
@@ -75,9 +74,14 @@ const AccordionWrap = styled.div`
   flex-direction: column;
   margin: 100px 0 98px;
 
-  @media ${({ theme }) => theme.breakpoint.desktop} {
+  @media ${({ theme }) => theme.breakpoint.laptop} {
     width: 730px;
     margin: 12px 0 0;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      width: 730px;
+      margin: 12px 0 0;
+    }
   }
 
   .accordion__icon {
@@ -121,9 +125,14 @@ const DropdownTitle = styled.h4`
     line-height: 48px;
     width: 503px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      font-size: 40px;
-      width: 630px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      font-size: 35px;
+      width: 600px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        font-size: 40px;
+        width: 630px;
+      }
     }
   }
 `
@@ -135,9 +144,14 @@ const Container = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 40px 0 0;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      width: 760px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      width: 700px;
       magin-top: 56px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        width: 760px;
+        magin-top: 56px;
+      }
     }
   }
 `
@@ -165,8 +179,12 @@ const Arrow = styled.img`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 28px 0 0;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      margin: 60px -20px 0 0;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin: 60px 30px 0 0;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 60px -20px 0 0;
+      }
     }
   }
 `

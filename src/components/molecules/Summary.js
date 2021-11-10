@@ -86,7 +86,7 @@ const SummaryWrap = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 24px 40px 144px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin: 88px 60px 0 85px;
     }
   }
@@ -96,10 +96,14 @@ const ButtonWrap = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin-top: 40px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       text-align: right;
       justify-content: flex-end;
-      margin: 40px 165px 0 650px;
+      margin: 40px 185px 0 650px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 40px 165px 0 650px;
+      }
     }
   }
 `
@@ -110,8 +114,12 @@ const ImageContainer = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 0 40px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      margin: 0 165px 0 140px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin: 0 130px 0 140px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 0 165px 0 140px;
+      }
     }
   }
 
@@ -125,8 +133,12 @@ const ImageContainer = styled.div`
       width: 689px;
       height: 208px;
 
-      @media screen and (min-width: 992px) {
-        width: 730px;
+      @media screen and (min-width: 1200px) {
+        width: 700px;
+
+        @media screen and (min-width: 1440px) {
+          width: 730px;
+        }
       }
     }
   }
@@ -136,11 +148,13 @@ const OrderContainer = styled.div`
   position: absolute;
   margin: -320px 25px 32px;
   background-color: transparent;
+  width: 290px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: -200px 73px 27px;
+    width: unset;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin: -200px 180px 0 90px;
       width: 602px;
       height: 114px;

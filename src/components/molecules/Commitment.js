@@ -38,7 +38,7 @@ const Commitment = () => {
         ),
       },
       {
-        media: "(max-width: 992px)",
+        media: "(max-width: 1199px)",
         image: getImage(
           commitments[1].frontmatter.commitImg.childImageSharp.gatsbyImageData
         ),
@@ -90,8 +90,12 @@ const CommitmentWrap = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     flex-direction: row;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      margin: 0 165px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin: 0 100px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 0 165px;
+      }
     }
   }
 `
@@ -101,8 +105,12 @@ const ImageContainer = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 0 69px 0 40px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      margin: 0 125px 0 0;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin: 0 100px 0 0;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 0 125px 0 0;
+      }
     }
   }
 
@@ -115,7 +123,7 @@ const ImageContainer = styled.div`
       width: 281px;
       height: 470px;
 
-      @media screen and (min-width: 992px) {
+      @media screen and (min-width: 1200px) {
         width: 445px;
         height: 520px;
       }
@@ -133,9 +141,13 @@ const Container = styled.div`
     margin: -50px 40px 0 0;
     max-width: 339px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      max-width: 540px;
-      margin: 10px 40px 0 0;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      max-width: 500px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        max-width: 540px;
+        margin: 10px 40px 0 0;
+      }
     }
   }
 `
@@ -145,7 +157,7 @@ const Title = styled.h1`
   line-height: 48px;
   color: var(--darkGreyBlue);
 
-  @media ${({ theme }) => theme.breakpoint.desktop} {
+  @media ${({ theme }) => theme.breakpoint.laptop} {
     font-size: 40px;
     line-height: 48px;
   }
@@ -160,7 +172,7 @@ const Description = styled.p`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     text-align: left;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       height: unset;
       font-size: 16px;
       line-height: 26px;

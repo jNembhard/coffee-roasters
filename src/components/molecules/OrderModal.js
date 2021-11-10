@@ -90,9 +90,6 @@ const ModalWrap = styled.div`
   justify-content: center;
   z-index: 2;
 
-  @media ${({ theme }) => theme.breakpoint.tablet} {
-  }
-
   .quotes {
     color: var(--grey);
     margin: 40px 24px 0;

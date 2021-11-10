@@ -115,7 +115,7 @@ const UncompromisingWrap = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 144px 40px 144px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin: 168px 80px;
     }
   }
@@ -129,8 +129,12 @@ const ForegroundImage = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin-top: -260px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      margin: -198px 165px 88px 660px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin: -198px 165px 88px 580px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: -198px 165px 88px 660px;
+      }
     }
   }
 
@@ -143,9 +147,14 @@ const ForegroundImage = styled.div`
       width: 573px;
       height: 320px;
 
-      @media screen and (min-width: 992px) {
-        width: 445px;
-        height: 474px;
+      @media screen and (min-width: 1200px) {
+        width: 420px;
+        height: 454px;
+
+        @media screen and (min-width: 1440px) {
+          width: 445px;
+          height: 474px;
+        }
       }
     }
   }
@@ -156,7 +165,7 @@ const BackgroundImage = styled.div`
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 160px 40px 0;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin: 88px 80px 0;
     }
   }
@@ -170,9 +179,14 @@ const BackgroundImage = styled.div`
       width: 688px;
       height: 488px;
 
-      @media screen and (min-width: 992px) {
-        width: 1280px;
-        height: 474px;
+      @media screen and (min-width: 1200px) {
+        width: 1140px;
+        height: 454px;
+
+        @media screen and (min-width: 1440px) {
+          width: 1280px;
+          height: 474px;
+        }
       }
     }
   }
@@ -191,9 +205,13 @@ const Container = styled.div`
     width: 540px;
     height: 197px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       text-align: left;
-      margin: 88px 665px 88px 85px;
+      margin: 88px 500px 88px 85px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 88px 665px 88px 85px;
+      }
     }
   }
 `
@@ -210,10 +228,10 @@ const Title = styled.h1`
     width: 420px;
     margin: 110px 64.5px 24px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      width: 514px;
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       font-size: 40px;
       line-height: 48px;
+      width: 514px;
       margin: 0;
     }
   }
@@ -235,7 +253,7 @@ const Description = styled.p`
     width: unset;
     height: unset;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       font-size: 16px;
     }
   }

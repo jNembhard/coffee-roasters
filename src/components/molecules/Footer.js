@@ -153,7 +153,7 @@ const NavLinkUl = styled.ul`
     @media ${({ theme }) => theme.breakpoint.laptop} {
       width: 293px;
       height: 15px;
-      margin: 53.44px 200px 51px 0;
+      margin: 53.44px 290px 51px 0;
 
       @media ${({ theme }) => theme.breakpoint.desktop} {
         width: 293px;
@@ -175,7 +175,7 @@ const List = styled.li`
     margin: unset;
     margin-left: -30px;
 
-    @media ${({ theme }) => theme.breakpoint.desktop} {
+    @media ${({ theme }) => theme.breakpoint.laptop} {
       margin: unset;
     }
   }
@@ -204,11 +204,7 @@ const SocialContainer = styled.div`
 
   @media ${({ theme }) => theme.breakpoint.laptop} {
     margin: 47px 85px 0 0;
-    width: 200px;
-
-    @media ${({ theme }) => theme.breakpoint.desktop} {
-      width: 120px;
-    }
+    width: 120px;
   }
 `
 const Socials = styled.img`

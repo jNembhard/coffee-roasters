@@ -48,17 +48,20 @@ export default Selection
 const SelectionWrap = styled.div`
   display: none;
 
-  @media ${({ theme }) => theme.breakpoint.desktop} {
+  @media ${({ theme }) => theme.breakpoint.laptop} {
     display: inherit;
-    position: sticky;
     width: 255px;
     height: 356px;
-    margin: 115px 0 0 65px;
+    margin: 105px 0 0 65px;
+
+    @media ${({ theme }) => theme.breakpoint.desktop} {
+      margin: 115px 0 0 65px;
+    }
   }
 `
 
 const SelectionsUL = styled.ul`
-  @media ${({ theme }) => theme.breakpoint.desktop} {
+  @media ${({ theme }) => theme.breakpoint.laptop} {
     list-style-type: none;
     font-family: "Fraunces";
     font-size: 24px;
