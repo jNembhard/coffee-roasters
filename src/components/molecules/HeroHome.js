@@ -54,6 +54,7 @@ const HeroHome = () => {
             loading="eager"
             className="hero-directed"
             formats={["auto", "webp", "avif"]}
+            style={{ borderRadius: "15px" }}
             alt="coffeepress"
           />
         </ImageWrap>
