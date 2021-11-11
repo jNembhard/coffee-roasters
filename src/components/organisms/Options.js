@@ -52,10 +52,6 @@ const OptionsWrap = styled.div`
 
 const OptionsForm = styled.form`
   display: inline-flex;
-
-  @media ${({ theme }) => theme.breakpoint.laptop} {
-    display: inline-flex;
-  }
 `
 
 const Container = styled.div`

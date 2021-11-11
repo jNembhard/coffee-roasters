@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `coffeeroasters`,
+    title: `Coffeeroasters`,
     description: `Pick your coffee, choose the frequency, receive and enjoy!`,
     author: `Jason Nembhard`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
@@ -11,6 +11,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-image`,
     `gatsby-plugin-smoothscroll`,
+    `gatsby-plugin-optimize-svgs`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -146,12 +147,12 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/assets/shared/desktop/leaf-logo.svg`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -77,14 +77,12 @@ export default AboutHero
 
 const AboutHeroWrap = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 120px;
   position: relative;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
-    align-items: unset;
     flex-direction: unset;
     margin-bottom: 144px;
 
@@ -135,20 +133,33 @@ const AboutHeroContainer = styled.div`
   position: absolute;
   background-color: transparent;
   text-align: center;
-  margin: 111px 24px 87px;
   max-width: 279px;
+  margin: auto;
+  top: 111px;
+  right: 24px;
+  bottom: 87px;
+  left: 24px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     text-align: left;
-    margin: 118px 233px 118px 56px;
+    top: 118px;
+    right: 233px;
+    bottom: 118px;
+    left: 58px;
     max-width: 398px;
 
     @media ${({ theme }) => theme.breakpoint.laptop} {
-      margin: 118px 600px 137px 85px;
+      top: 118px;
+      right: 600px;
+      bottom: 137px;
+      left: 85px;
       max-width: 445px;
 
       @media ${({ theme }) => theme.breakpoint.desktop} {
-        margin: 137px 750px 137px 85px;
+        top: 137px;
+        right: 750px;
+        bottom: 137px;
+        left: 85px;
         max-width: 445px;
       }
     }

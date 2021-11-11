@@ -71,6 +71,7 @@ const Uncompromising = () => {
             loading="eager"
             className="bg-directed"
             formats={["auto", "webp", "avif"]}
+            style={{ borderRadius: "8px" }}
             alt="BG Slate"
           />
         </BackgroundImage>
@@ -81,6 +82,7 @@ const Uncompromising = () => {
               loading="eager"
               className="fg-directed"
               formats={["auto", "webp", "avif"]}
+              style={{ borderRadius: "8px" }}
               alt="quality cup"
             />
           </ForegroundImage>
@@ -125,6 +127,7 @@ const ForegroundImage = styled.div`
   position: absolute;
   background-color: transparent;
   margin-top: -200px;
+  border-radius: 8px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin-top: -260px;
@@ -141,7 +144,6 @@ const ForegroundImage = styled.div`
   .fg-directed {
     width: 279px;
     height: 156px;
-    border-radius: 8px;
 
     @media screen and (min-width: 767px) {
       width: 573px;
@@ -161,6 +163,7 @@ const ForegroundImage = styled.div`
 `
 const BackgroundImage = styled.div`
   position: relative;
+  border-radius: 8px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin: 160px 40px 0;
@@ -173,7 +176,6 @@ const BackgroundImage = styled.div`
   .bg-directed {
     width: 327px;
     height: 509px;
-    border-radius: 8px;
 
     @media screen and (min-width: 767px) {
       width: 688px;
@@ -196,21 +198,34 @@ const Container = styled.div`
   position: absolute;
   text-align: center;
   background-color: transparent;
-  margin: 142px 24px 61px;
+  top: 0;
+  right: 22px;
+  bottom: 64px;
+  left: 18px;
+  margin: auto;
   width: 279px;
   height: 226px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
-    margin: 160px 74px 67px;
+    top: 160px;
+    right: 84px;
+    bottom: 67px;
+    left: 54px;
     width: 540px;
     height: 197px;
 
     @media ${({ theme }) => theme.breakpoint.laptop} {
+      top: 88px;
+      right: 500px;
+      bottom: 88px;
+      left: 20px;
       text-align: left;
-      margin: 88px 500px 88px 85px;
 
       @media ${({ theme }) => theme.breakpoint.desktop} {
-        margin: 88px 665px 88px 85px;
+        top: 88px;
+        right: 665px;
+        bottom: 88px;
+        left: 85px;
       }
     }
   }

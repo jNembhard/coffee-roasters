@@ -76,6 +76,7 @@ const PlanHeroWrap = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 120px;
+  position: relative;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     align-items: unset;
@@ -126,21 +127,33 @@ const PlanHeroContainer = styled.div`
   position: absolute;
   background-color: transparent;
   text-align: center;
-  margin: 111px 24px 87px;
+  top: 111px;
+  right: 24px;
+  bottom: 87px;
+  left: 24px;
+  margin: auto;
   max-width: 279px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     text-align: left;
-    margin: 127px 233px 126px 58px;
+    top: 88px;
+    right: 233px;
+    bottom: 126px;
+    left: 58px;
     max-width: 398px;
 
     @media ${({ theme }) => theme.breakpoint.laptop} {
-      margin: 80px 680px 134px 160px;
+      top: 80px;
+      right: 680px;
+      bottom: 134px;
+      left: 125px;
       max-width: 486px;
 
       @media ${({ theme }) => theme.breakpoint.desktop} {
-        margin: 100px 709px 134px 85px;
-        max-width: 486px;
+        top: 100px;
+        right: 709px;
+        bottom: 134px;
+        left: 85px;
       }
     }
   }

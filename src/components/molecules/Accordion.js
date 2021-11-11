@@ -90,7 +90,7 @@ const AccordionWrap = styled.div`
       margin: 60px 0 88px;
 
       @media ${({ theme }) => theme.breakpoint.desktop} {
-        margin: 12px 0 88px;
+        margin: 75px 0 88px;
       }
     }
   }

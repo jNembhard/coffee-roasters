@@ -12,6 +12,7 @@
     "gatsby-plugin-manifest": "^3.13.0",
     "gatsby-plugin-modal-routing": "^1.2.0",
     "gatsby-plugin-offline": "^4.13.0",
+    "gatsby-plugin-optimize-svgs": "^1.0.5",
     "gatsby-plugin-react-helmet": "^4.13.0",
     "gatsby-plugin-sharp": "^3.13.0",
     "gatsby-plugin-smoothscroll": "^1.2.0",
