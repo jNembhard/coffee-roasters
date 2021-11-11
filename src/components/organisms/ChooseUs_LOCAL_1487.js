@@ -103,10 +103,7 @@ const ContainerTwo = styled.div`
   background-color: transparent;
   position: absolute;
   top: 305px;
-<<<<<<< HEAD
   align-items: center;
-=======
->>>>>>> branch2
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     top: 240px;

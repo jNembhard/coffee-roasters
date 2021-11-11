@@ -83,10 +83,7 @@ const CoffeesWrap = styled.div`
 
 const CoffeeCollection = styled.div`
   h1 {
-    background-image: linear-gradient(
-      /* 180deg, */ var(--darkGreyBlue),
-      var(--lightCreamBG)
-    );
+    background-image: linear-gradient(var(--darkGreyBlue), var(--lightCreamBG));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;

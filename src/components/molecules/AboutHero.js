@@ -53,8 +53,9 @@ const AboutHero = () => {
           <GatsbyImage
             image={imagesAbout}
             loading="eager"
-            className="art-directed"
+            className="about-directed"
             formats={["auto", "webp", "avif"]}
+            style={{ borderRadius: "8px" }}
             alt="white cup"
           />
         </ImageContainer>
@@ -80,6 +81,7 @@ const AboutHeroWrap = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 120px;
+  position: relative;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     align-items: unset;
@@ -111,9 +113,8 @@ const ImageContainer = styled.div`
     }
   }
 
-  .art-directed {
+  .about-directed {
     height: 400px;
-    border-radius: 8px;
 
     @media screen and (min-width: 767px) {
       width: 689px;
