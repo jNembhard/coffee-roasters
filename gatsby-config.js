@@ -3,7 +3,7 @@ module.exports = {
     title: `Coffeeroasters`,
     description: `Pick your coffee, choose the frequency, receive and enjoy!`,
     author: `Jason Nembhard`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://coffeeroasters.gatsbyjs.io/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -144,8 +144,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Coffeeroasters`,
+        short_name: `Coffeeroasters`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
