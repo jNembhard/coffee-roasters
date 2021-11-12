@@ -40,8 +40,7 @@ const Coffees = () => {
               <CoffeeBags>
                 <GatsbyImage
                   image={getImage(
-                    coffee.frontmatter.coffeeImg?.childImageSharp
-                      ?.gatsbyImageData
+                    coffee.frontmatter.coffeeImg.childImageSharp.gatsbyImageData
                   )}
                   alt={coffee.frontmatter.coffee}
                 />
