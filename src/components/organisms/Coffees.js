@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import sanitizeHtml from "sanitize-html"
 
 const Coffees = () => {
   const data = useStaticQuery(graphql`
@@ -20,9 +19,9 @@ const Coffees = () => {
             }
             number
             coffee
+            coffeeDescription
           }
           id
-          html
         }
       }
     }
@@ -47,11 +46,9 @@ const Coffees = () => {
               </CoffeeBags>
               <DesContainer>
                 <Title>{coffee.frontmatter.coffee}</Title>
-                <Description
-                  dangerouslySetInnerHTML={{
-                    __html: sanitizeHtml(coffee.html),
-                  }}
-                />
+                <Description>
+                  {coffee.frontmatter.coffeeDescription}
+                </Description>
               </DesContainer>
             </CoffeesContainer>
           ))}
