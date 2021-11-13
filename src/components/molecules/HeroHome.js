@@ -54,7 +54,6 @@ const HeroHome = () => {
             loading="eager"
             className="hero-directed"
             formats={["auto", "webp", "avif"]}
-            style={{ borderRadius: "15px" }}
             alt="coffeepress"
           />
         </ImageWrap>
@@ -94,37 +93,26 @@ const HeroWrap = styled.div`
 
 const ImageWrap = styled.div`
   position: relative;
-  margin: 0 24px;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-
-  @media ${({ theme }) => theme.breakpoint.tablet} {
-    margin: 0 40px;
-
-    @media ${({ theme }) => theme.breakpoint.laptop} {
-      margin: 0 60px;
-
-      @media ${({ theme }) => theme.breakpoint.desktop} {
-        margin: 0 80px;
-      }
-    }
-  }
 
   .hero-directed {
     height: 500px;
+    margin: 0 24px;
     border-radius: 15px;
 
-    @media ${({ theme }) => theme.breakpoint.tablet} {
+    @media screen and (min-width: 767px) {
       width: 689px;
+      margin: 0 40px;
 
-      @media ${({ theme }) => theme.breakpoint.laptop} {
+      @media screen and (min-width: 1200px) {
         width: 1140px;
+        margin: 0 60px;
 
-        @media ${({ theme }) => theme.breakpoint.desktop} {
+        @media screen and (min-width: 1440px) {
           width: 1280px;
           height: 600px;
+          margin: 0 80px;
         }
       }
     }
