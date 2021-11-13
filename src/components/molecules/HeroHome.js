@@ -54,6 +54,7 @@ const HeroHome = () => {
             loading="eager"
             className="hero-directed"
             formats={["auto", "webp", "avif"]}
+            imgStyle={{ borderRadius: "15px" }}
             alt="coffeepress"
           />
         </ImageWrap>
@@ -99,7 +100,6 @@ const ImageWrap = styled.div`
   .hero-directed {
     height: 500px;
     margin: 0 24px;
-    border-radius: 15px;
 
     @media screen and (min-width: 767px) {
       width: 689px;
