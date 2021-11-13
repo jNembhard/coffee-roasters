@@ -143,6 +143,8 @@ const ForegroundImage = styled.div`
   .fg-directed {
     width: 279px;
     height: 156px;
+    border: 0;
+    border-radius: 8px;
 
     @media screen and (min-width: 767px) {
       width: 573px;
