@@ -71,7 +71,7 @@ const Uncompromising = () => {
             loading="eager"
             className="bg-directed"
             formats={["auto", "webp", "avif"]}
-            style={{ borderRadius: "8px" }}
+            imgStyle={{ borderRadius: "8px" }}
             alt="BG Slate"
           />
         </BackgroundImage>
@@ -82,7 +82,7 @@ const Uncompromising = () => {
               loading="eager"
               className="fg-directed"
               formats={["auto", "webp", "avif"]}
-              style={{ borderRadius: "8px" }}
+              imgStyle={{ borderRadius: "8px" }}
               alt="quality cup"
             />
           </ForegroundImage>
@@ -127,7 +127,6 @@ const ForegroundImage = styled.div`
   position: absolute;
   background-color: transparent;
   margin-top: -200px;
-  border-radius: 8px;
 
   @media ${({ theme }) => theme.breakpoint.tablet} {
     margin-top: -260px;

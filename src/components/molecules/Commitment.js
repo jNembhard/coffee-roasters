@@ -55,6 +55,7 @@ const Commitment = () => {
             loading="eager"
             className="art-directed"
             formats={["auto", "webp", "avif"]}
+            imgStyle={{ borderRadius: "8px" }}
             alt="white cup"
           />
         </ImageContainer>
@@ -117,7 +118,6 @@ const ImageContainer = styled.div`
   .art-directed {
     width: 327px;
     height: 400px;
-    border-radius: 8px;
 
     @media screen and (min-width: 767px) {
       width: 281px;
