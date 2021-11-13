@@ -36,7 +36,7 @@ const Uncompromising = () => {
         ),
       },
       {
-        media: "(max-width: 992px)",
+        media: "(max-width: 1199px)",
         image: getImage(
           grounds[1].frontmatter.commitImg.childImageSharp.gatsbyImageData
         ),
@@ -54,7 +54,7 @@ const Uncompromising = () => {
         ),
       },
       {
-        media: "(max-width: 992px)",
+        media: "(max-width: 1199px)",
         image: getImage(
           grounds[4].frontmatter.commitImg.childImageSharp.gatsbyImageData
         ),
