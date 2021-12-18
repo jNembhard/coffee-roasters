@@ -97,22 +97,34 @@ const ImageContainer = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  margin: 0 24px;
+
+  @media ${({ theme }) => theme.breakpoint.tablet} {
+    margin: 0 40px;
+
+    @media ${({ theme }) => theme.breakpoint.laptop} {
+      margin: 0 60px;
+
+      @media ${({ theme }) => theme.breakpoint.desktop} {
+        margin: 0 80px;
+      }
+    }
+  }
 
   .about-directed {
     height: 400px;
-    margin: 0 24px;
 
     @media screen and (min-width: 767px) {
       width: 689px;
-      margin: 0 40px;
+      /* margin: 0 40px; */
 
       @media screen and (min-width: 1200px) {
         width: 1140px;
-        margin: 0 80px;
 
         @media screen and (min-width: 1440px) {
           width: 1280px;
           height: 450px;
+          /* margin: 0 80px; */
         }
       }
     }

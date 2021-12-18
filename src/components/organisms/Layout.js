@@ -6,8 +6,9 @@ import Header from "../molecules/Header"
 import Footer from "../molecules/Footer"
 import { GlobalStyles } from "../../styles/GlobalStyles"
 import { theme } from "../../styles/theme"
+import { motion } from "framer-motion"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, path }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,7 +25,20 @@ const Layout = ({ children }) => {
         <GlobalStyles />
         <Header />
         <div>
-          <main>{children}</main>
+          <motion.main
+            key={path}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              type: "spring",
+              mass: 0.35,
+              stiffness: 75,
+              duration: 0.3,
+            }}
+          >
+            {children}
+          </motion.main>
           <Footer
             siteTitle={data.site.siteMetadata?.title || `coffeeroasters`}
           />
