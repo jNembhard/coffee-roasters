@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import arrow from "../../images/assets/plan/desktop/icon-arrow.svg"
 import PropTypes from "prop-types"
@@ -10,7 +10,7 @@ const Accordion = ({ children, dropdownTitle, section, buttonID }) => {
   const [active, setActive] = useState("")
   const [rotate, setRotate] = useState("accordion__icon")
 
-  const content = useRef(null)
+  // const content = useRef(null)
 
   const toggleAccordion = () => {
     setActive(active === "" ? "active" : "")

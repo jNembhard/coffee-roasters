@@ -49,6 +49,8 @@ const SelectionWrap = styled.aside`
   display: none;
 
   @media ${({ theme }) => theme.breakpoint.laptop} {
+    position: sticky;
+    top: 0;
     display: inherit;
     width: 255px;
     height: 356px;

@@ -44,17 +44,17 @@ Users should be able to:
 
 ### What I learned
 
-I decided to use a Gatsby framework to create this website. This framework requires more advanced knowledge of data handling when compared to a NextJS or pure React framework.
+I decided to use a Gatsby framework to create this website. This framework requires more advanced knowledge of data handling when compared to a NextJS or pure a React framework.
 
 Gatsby relies heavily on GraphQL and plugins to manage data and content. The data can be extracted to page queries for routes or static query hooks to to read data into components.
 
-Gatsby is great for image optimization and can convert an image to a modern format at before first page load vastly improving performance.
+Gatsby is great for image optimization and can convert an image to a modern format before first page load vastly improving performance.
 
 In order to handle most of the JavaScript for placing an order and providing the summary, I had tried a few different methods starting with reducers and React Context. Data management was a bit tricky until I found a useful hook for data management.
 
 The useBetween hook allows you to manage state between scattered React component props. I took this hook and was able to create useSummary hook to cut down on a lot of the code required.
 
-You can look up my useSummary hook in th hooks folder if you want to see the full implementation, but here is a bit of the code where most of the magic happens:
+You can look up my useSummary hook in the hooks folder if you want to see the full implementation, but here is a bit of the code where most of the magic happens:
 
 ```js
 const [{ group1, group2, group3, group4, group5 }, setActive] =
@@ -77,12 +77,12 @@ const handleChange = e => {
 }
 ```
 
-Basically there are 5 accordions available and this handleChange method keeps track of which radiobutton inside each accordion has been pressed. After figuring out that logic, it makes it possible to pass state other prop componentsto disable buttons or pass form information to the OrderModal.
+Basically there are 5 accordions available and this handleChange method keeps track of which radiobutton inside each accordion has been pressed. After figuring out that logic, it makes it possible to pass the state to other prop components to disable buttons or pass form information to the OrderModal.
 
 ### Continued development
 
-This project took a bit longer than expected to complete due to finding an ideal state management tool to stick with and learning GraphQL. I think I may begin my next project with identifying what my goal is in terms of data managment to speed up development
+This project took a bit longer than expected to complete due to finding an ideal state management tool to stick with and learning GraphQL. I think I may begin my next project with identifying what my goal is in terms of data managment to speed up development.
 
 ## Author
 
-- Website - [Jason Nembhard](https://jasonnembhard.com)
+- Website - [Jason Nembhard](https://www.jasonnembhard.com)

@@ -68,6 +68,7 @@ const useSummary = () => {
     group4,
     group5,
     blockAccordion,
+    clearGroup,
     handleChange,
     shippingCost,
   }
