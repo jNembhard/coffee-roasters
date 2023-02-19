@@ -21,11 +21,6 @@ const Selection = () => {
         {selections.map(selection => (
           <React.Fragment key={selection.id}>
             <li
-              onClick={() => {
-                setActive(`${selection.name}`)
-                scrollTo(`${selection.section}`)
-              }}
-              disabled={true}
               className={active === `${selection.name}` ? "active" : ""}
               style={
                 accordion && selection.id === 4
@@ -33,7 +28,22 @@ const Selection = () => {
                   : {}
               }
             >
-              {selection.name}
+              <div
+                role="button"
+                disabled={true}
+                onKeyDown={event => {
+                  if (event.key === "Enter") {
+                    setActive(`${selection.name}`)
+                    scrollTo(`${selection.section}`)
+                  }
+                }}
+                onClick={() => {
+                  setActive(`${selection.name}`)
+                  scrollTo(`${selection.section}`)
+                }}
+              >
+                {selection.name}
+              </div>
             </li>
             <hr />
           </React.Fragment>
@@ -70,6 +80,7 @@ const SelectionsUL = styled.ul`
     line-height: 32px;
 
     li {
+      display: flex;
       margin: 24px 0;
       width: 255px;
       counter-increment: item;

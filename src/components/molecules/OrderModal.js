@@ -30,6 +30,7 @@ const OrderModal = ({ onClose, show }) => {
     return function cleanup() {
       document.body.removeEventListener("keydown", closeOnEsc)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const data = useStaticQuery(graphql`
